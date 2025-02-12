@@ -1,0 +1,26 @@
+[2025-02-12T20:27:16.638+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-12T20:27:16.662+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-12T20:27:14.530313+00:00 [queued]>
+[2025-02-12T20:27:16.675+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-12T20:27:14.530313+00:00 [queued]>
+[2025-02-12T20:27:16.676+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-12T20:27:16.696+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_spark_script> on 2025-02-12 20:27:14.530313+00:00
+[2025-02-12T20:27:16.703+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=81) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-12T20:27:16.706+0000] {standard_task_runner.py:72} INFO - Started process 82 to run task
+[2025-02-12T20:27:16.707+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ing_mov_20_21', 'run_spark_script', 'manual__2025-02-12T20:27:14.530313+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/scriptteste.py', '--cfg-path', '/tmp/tmp6uk_gk2k']
+[2025-02-12T20:27:16.709+0000] {standard_task_runner.py:105} INFO - Job 63: Subtask run_spark_script
+[2025-02-12T20:27:16.785+0000] {task_command.py:467} INFO - Running <TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-12T20:27:14.530313+00:00 [running]> on host a871b8661314
+[2025-02-12T20:27:16.924+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ing_mov_20_21' AIRFLOW_CTX_TASK_ID='run_spark_script' AIRFLOW_CTX_EXECUTION_DATE='2025-02-12T20:27:14.530313+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-12T20:27:14.530313+00:00'
+[2025-02-12T20:27:16.926+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-12T20:27:16.960+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-12T20:27:16.961+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'spark-submit /opt/bitnami/spark/scripts/ing_mov_20_21.py']
+[2025-02-12T20:27:16.971+0000] {subprocess.py:99} INFO - Output:
+[2025-02-12T20:27:21.765+0000] {subprocess.py:106} INFO - Erro na execução: ERRO: TMDB_API_TOKEN não encontrado. Verifique seu arquivo .env.
+[2025-02-12T20:27:21.872+0000] {subprocess.py:106} INFO - 25/02/12 20:27:21 INFO ShutdownHookManager: Shutdown hook called
+[2025-02-12T20:27:21.876+0000] {subprocess.py:106} INFO - 25/02/12 20:27:21 INFO ShutdownHookManager: Deleting directory /tmp/spark-19d74f9e-6254-4b29-a09d-ee7c775fb397
+[2025-02-12T20:27:21.918+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-02-12T20:27:21.962+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-12T20:27:21.963+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ing_mov_20_21, task_id=run_spark_script, run_id=manual__2025-02-12T20:27:14.530313+00:00, execution_date=20250212T202714, start_date=20250212T202716, end_date=20250212T202721
+[2025-02-12T20:27:22.014+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-12T20:27:22.033+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-12T20:27:22.036+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
