@@ -12,13 +12,15 @@ default_args = {
 dag = DAG(
     "ing_mov_20_21",
     default_args=default_args,
-    schedule_interval=None,  # Rodar manualmente
+    schedule_interval=None,
     catchup=False,
 )
 
 run_spark_script = BashOperator(
     task_id="run_spark_script",
-    bash_command="spark-submit /opt/bitnami/spark/scripts/ing_mov_20_21.py",
+    bash_command="spark-submit "
+                 "--packages org.apache.hadoop:hadoop-aws:3.3.6,com.amazonaws:aws-java-sdk-s3:1.12.720 "  # SDK reduzido
+                 "/opt/bitnami/spark/scripts/ing_mov_20_21.py",
     dag=dag,
 )
 

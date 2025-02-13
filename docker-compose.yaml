@@ -232,38 +232,56 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
       - SPARK_USER=spark
+      - AWS_ACCESS_KEY_ID=minioadmin      
+      - AWS_SECRET_ACCESS_KEY=minioadmin  
+      - AWS_REGION=us-east-1
+      - S3_ENDPOINT=http://minio:9000
     ports:
       - '8082:8080'
   spark-worker:
-    image: docker.io/bitnami/spark:3.5.4
+    build:
+      context: .  
+      dockerfile: dockerfile.sparkworker
     env_file:
       - ./env/api.env
       - ./env/minio.env
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
-      - SPARK_WORKER_MEMORY=8G
-      - SPARK_WORKER_CORES=3
+      - SPARK_WORKER_MEMORY=12G
+      - SPARK_WORKER_CORES=2
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
       - SPARK_USER=spark
+      - AWS_REGION=us-east-1
+      - S3_ENDPOINT=http://minio:9000
+    ports:
+      - "8888:8888"  # Jupyter Notebook
+    volumes:
+      - "./spark/scripts:/opt/bitnami/spark/scripts"
   spark-worker2:
-    image: docker.io/bitnami/spark:3.5.4
+    build:
+      context: . 
+      dockerfile: dockerfile.sparkworker
     env_file:
       - ./env/api.env
       - ./env/minio.env
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
-      - SPARK_WORKER_MEMORY=8G
-      - SPARK_WORKER_CORES=3
+      - SPARK_WORKER_MEMORY=12G
+      - SPARK_WORKER_CORES=2
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
       - SPARK_USER=spark
+      - AWS_REGION=us-east-1
+      - S3_ENDPOINT=http://minio:9000
+    volumes:
+      - "./spark/scripts:/opt/bitnami/spark/scripts"
   minio:
     image: minio/minio
     env_file:
@@ -282,24 +300,6 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
-  jupyter-notebook:
-    hostname: jupyter-notebook
-    container_name: jupyter-notebook
-    image: dimajix/jupyter-spark:latest
-    command: notebook
-    environment:
-      - SPARK_MASTER=spark://spark:7077
-      - PYSPARK_PYTHON=/usr/bin/python3
-      - JUPYTER_ENABLE_LAB=yes
-      - JUPYTER_TOKEN=1234
-    ports:
-      - 8888:8888
-    volumes:
-      - ./spark/scripts:/opt/workspace
-    depends_on:
-      - spark  
-      - spark-worker
-      - spark-worker2
 
 volumes:
   postgres-db-volume:

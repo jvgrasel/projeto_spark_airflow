@@ -1,0 +1,87 @@
+[2025-02-13T13:54:18.718+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-13T13:54:18.756+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-12T20:53:35.927521+00:00 [queued]>
+[2025-02-13T13:54:18.778+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-12T20:53:35.927521+00:00 [queued]>
+[2025-02-13T13:54:18.779+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2025-02-13T13:54:18.811+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_spark_script> on 2025-02-12 20:53:35.927521+00:00
+[2025-02-13T13:54:18.823+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ing_mov_20_21', 'run_spark_script', 'manual__2025-02-12T20:53:35.927521+00:00', '--job-id', '80', '--raw', '--subdir', 'DAGS_FOLDER/scriptteste.py', '--cfg-path', '/tmp/tmp6frvrhdf']
+[2025-02-13T13:54:18.825+0000] {standard_task_runner.py:105} INFO - Job 80: Subtask run_spark_script
+[2025-02-13T13:54:18.820+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-13T13:54:18.827+0000] {standard_task_runner.py:72} INFO - Started process 68 to run task
+[2025-02-13T13:54:18.922+0000] {task_command.py:467} INFO - Running <TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-12T20:53:35.927521+00:00 [running]> on host 9c50c45f72c4
+[2025-02-13T13:54:19.069+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ing_mov_20_21' AIRFLOW_CTX_TASK_ID='run_spark_script' AIRFLOW_CTX_EXECUTION_DATE='2025-02-12T20:53:35.927521+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-12T20:53:35.927521+00:00'
+[2025-02-13T13:54:19.071+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-13T13:54:19.130+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-13T13:54:19.131+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'spark-submit /opt/bitnami/spark/scripts/ing_mov_20_21.py']
+[2025-02-13T13:54:19.145+0000] {subprocess.py:99} INFO - Output:
+[2025-02-13T13:54:29.221+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO SparkContext: Running Spark version 3.5.4
+[2025-02-13T13:54:29.230+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-02-13T13:54:29.232+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO SparkContext: Java version 17.0.14
+[2025-02-13T13:54:29.410+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-02-13T13:54:29.691+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO ResourceUtils: ==============================================================
+[2025-02-13T13:54:29.693+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-02-13T13:54:29.694+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO ResourceUtils: ==============================================================
+[2025-02-13T13:54:29.695+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO SparkContext: Submitted application: Movies_20_21
+[2025-02-13T13:54:29.755+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 12288, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-02-13T13:54:29.788+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO ResourceProfile: Limiting resource is cpus at 2 tasks per executor
+[2025-02-13T13:54:29.801+0000] {subprocess.py:106} INFO - 25/02/13 13:54:29 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-02-13T13:54:30.047+0000] {subprocess.py:106} INFO - 25/02/13 13:54:30 INFO SecurityManager: Changing view acls to: ***
+[2025-02-13T13:54:30.048+0000] {subprocess.py:106} INFO - 25/02/13 13:54:30 INFO SecurityManager: Changing modify acls to: ***
+[2025-02-13T13:54:30.049+0000] {subprocess.py:106} INFO - 25/02/13 13:54:30 INFO SecurityManager: Changing view acls groups to:
+[2025-02-13T13:54:30.049+0000] {subprocess.py:106} INFO - 25/02/13 13:54:30 INFO SecurityManager: Changing modify acls groups to:
+[2025-02-13T13:54:30.050+0000] {subprocess.py:106} INFO - 25/02/13 13:54:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-02-13T13:54:30.772+0000] {subprocess.py:106} INFO - 25/02/13 13:54:30 INFO Utils: Successfully started service 'sparkDriver' on port 32911.
+[2025-02-13T13:54:30.915+0000] {subprocess.py:106} INFO - 25/02/13 13:54:30 INFO SparkEnv: Registering MapOutputTracker
+[2025-02-13T13:54:31.064+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO SparkEnv: Registering BlockManagerMaster
+[2025-02-13T13:54:31.135+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-02-13T13:54:31.140+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-02-13T13:54:31.153+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-02-13T13:54:31.227+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-64a18626-5ae8-4c4a-a2f9-93032c4ae20f
+[2025-02-13T13:54:31.261+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-02-13T13:54:31.296+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-02-13T13:54:31.680+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-02-13T13:54:31.830+0000] {subprocess.py:106} INFO - 25/02/13 13:54:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-02-13T13:54:32.094+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark:7077...
+[2025-02-13T13:54:32.198+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO TransportClientFactory: Successfully created connection to spark/172.18.0.6:7077 after 57 ms (0 ms spent in bootstraps)
+[2025-02-13T13:54:32.462+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250213135432-0000
+[2025-02-13T13:54:32.484+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34255.
+[2025-02-13T13:54:32.486+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO NettyBlockTransferService: Server created on 9c50c45f72c4:34255
+[2025-02-13T13:54:32.489+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-02-13T13:54:32.505+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 9c50c45f72c4, 34255, None)
+[2025-02-13T13:54:32.511+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO BlockManagerMasterEndpoint: Registering block manager 9c50c45f72c4:34255 with 434.4 MiB RAM, BlockManagerId(driver, 9c50c45f72c4, 34255, None)
+[2025-02-13T13:54:32.516+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 9c50c45f72c4, 34255, None)
+[2025-02-13T13:54:32.518+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 9c50c45f72c4, 34255, None)
+[2025-02-13T13:54:32.545+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250213135432-0000/0 on worker-20250213135248-172.18.0.2-44821 (172.18.0.2:44821) with 2 core(s)
+[2025-02-13T13:54:32.547+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20250213135432-0000/0 on hostPort 172.18.0.2:44821 with 2 core(s), 12.0 GiB RAM
+[2025-02-13T13:54:32.547+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250213135432-0000/1 on worker-20250213135248-172.18.0.4-43149 (172.18.0.4:43149) with 2 core(s)
+[2025-02-13T13:54:32.548+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20250213135432-0000/1 on hostPort 172.18.0.4:43149 with 2 core(s), 12.0 GiB RAM
+[2025-02-13T13:54:32.951+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250213135432-0000/0 is now RUNNING
+[2025-02-13T13:54:32.953+0000] {subprocess.py:106} INFO - 25/02/13 13:54:32 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250213135432-0000/1 is now RUNNING
+[2025-02-13T13:54:33.379+0000] {subprocess.py:106} INFO - 25/02/13 13:54:33 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-02-13T13:54:39.396+0000] {subprocess.py:106} INFO - 25/02/13 13:54:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.4:47664) with ID 1,  ResourceProfileId 0
+[2025-02-13T13:54:39.415+0000] {subprocess.py:106} INFO - 25/02/13 13:54:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.2:47874) with ID 0,  ResourceProfileId 0
+[2025-02-13T13:54:39.587+0000] {subprocess.py:106} INFO - 25/02/13 13:54:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.2:34681 with 7.0 GiB RAM, BlockManagerId(0, 172.18.0.2, 34681, None)
+[2025-02-13T13:54:39.595+0000] {subprocess.py:106} INFO - 25/02/13 13:54:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.4:38449 with 7.0 GiB RAM, BlockManagerId(1, 172.18.0.4, 38449, None)
+[2025-02-13T14:12:35.756+0000] {subprocess.py:106} INFO - Erro na execução: HTTPSConnectionPool(host='api.themoviedb.org', port=443): Max retries exceeded with url: /3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&primary_release_date.gte=2020-01-21&primary_release_date.lte=2020-01-21 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe1db37f7a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[2025-02-13T14:12:35.888+0000] {subprocess.py:106} INFO - 25/02/13 14:12:35 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-02-13T14:12:35.890+0000] {subprocess.py:106} INFO - 25/02/13 14:12:35 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-02-13T14:12:35.908+0000] {subprocess.py:106} INFO - 25/02/13 14:12:35 INFO SparkUI: Stopped Spark web UI at http://9c50c45f72c4:4040
+[2025-02-13T14:12:35.915+0000] {subprocess.py:106} INFO - 25/02/13 14:12:35 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-02-13T14:12:35.916+0000] {subprocess.py:106} INFO - 25/02/13 14:12:35 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-02-13T14:12:35.955+0000] {subprocess.py:106} INFO - 25/02/13 14:12:35 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-02-13T14:12:36.072+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO MemoryStore: MemoryStore cleared
+[2025-02-13T14:12:36.074+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO BlockManager: BlockManager stopped
+[2025-02-13T14:12:36.096+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-02-13T14:12:36.112+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-02-13T14:12:36.209+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO SparkContext: Successfully stopped SparkContext
+[2025-02-13T14:12:36.212+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO ShutdownHookManager: Shutdown hook called
+[2025-02-13T14:12:36.219+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-298144cf-d789-4b94-9282-f525a7233d1e
+[2025-02-13T14:12:36.233+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-63cba16b-5345-4952-a585-64445ace39db
+[2025-02-13T14:12:36.246+0000] {subprocess.py:106} INFO - 25/02/13 14:12:36 INFO ShutdownHookManager: Deleting directory /tmp/spark-63cba16b-5345-4952-a585-64445ace39db/pyspark-bee5d0d0-8af6-4f01-bf37-e55db243838d
+[2025-02-13T14:12:36.309+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-02-13T14:12:36.386+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-13T14:12:36.389+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ing_mov_20_21, task_id=run_spark_script, run_id=manual__2025-02-12T20:53:35.927521+00:00, execution_date=20250212T205335, start_date=20250213T135418, end_date=20250213T141236
+[2025-02-13T14:12:36.521+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-13T14:12:36.571+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-13T14:12:36.579+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

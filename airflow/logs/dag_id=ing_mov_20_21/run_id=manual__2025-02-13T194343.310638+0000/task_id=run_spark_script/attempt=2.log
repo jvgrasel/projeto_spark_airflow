@@ -1,0 +1,290 @@
+[2025-02-13T20:18:45.270+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-13T20:18:45.310+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-13T19:43:43.310638+00:00 [queued]>
+[2025-02-13T20:18:45.332+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-13T19:43:43.310638+00:00 [queued]>
+[2025-02-13T20:18:45.334+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2025-02-13T20:18:45.364+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_spark_script> on 2025-02-13 19:43:43.310638+00:00
+[2025-02-13T20:18:45.375+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=73) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-13T20:18:45.376+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ing_mov_20_21', 'run_spark_script', 'manual__2025-02-13T19:43:43.310638+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/scriptteste.py', '--cfg-path', '/tmp/tmpw6b_bq40']
+[2025-02-13T20:18:45.378+0000] {standard_task_runner.py:72} INFO - Started process 74 to run task
+[2025-02-13T20:18:45.378+0000] {standard_task_runner.py:105} INFO - Job 7: Subtask run_spark_script
+[2025-02-13T20:18:45.485+0000] {task_command.py:467} INFO - Running <TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-13T19:43:43.310638+00:00 [running]> on host 4dbe8526a981
+[2025-02-13T20:18:45.751+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ing_mov_20_21' AIRFLOW_CTX_TASK_ID='run_spark_script' AIRFLOW_CTX_EXECUTION_DATE='2025-02-13T19:43:43.310638+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-13T19:43:43.310638+00:00'
+[2025-02-13T20:18:45.753+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-13T20:18:45.830+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-13T20:18:45.832+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'spark-submit --packages org.apache.hadoop:hadoop-aws:3.3.6,com.amazonaws:aws-java-sdk-bundle:1.12.720 /opt/bitnami/spark/scripts/ing_mov_20_21.py']
+[2025-02-13T20:18:45.849+0000] {subprocess.py:99} INFO - Output:
+[2025-02-13T20:18:49.726+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-02-13T20:18:50.004+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2025-02-13T20:18:50.006+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2025-02-13T20:18:50.021+0000] {subprocess.py:106} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2025-02-13T20:18:50.023+0000] {subprocess.py:106} INFO - com.amazonaws#aws-java-sdk-bundle added as a dependency
+[2025-02-13T20:18:50.024+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-4ecc5976-f379-4547-b96c-9437af675806;1.0
+[2025-02-13T20:18:50.025+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2025-02-13T20:18:55.049+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.6 in central
+[2025-02-13T20:18:56.979+0000] {subprocess.py:106} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.1.3.Final in central
+[2025-02-13T20:18:58.388+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.720 in central
+[2025-02-13T20:18:58.544+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/hadoop-aws-3.3.6.jar ...
+[2025-02-13T20:18:59.140+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-aws;3.3.6!hadoop-aws.jar (735ms)
+[2025-02-13T20:19:01.428+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.720/aws-java-sdk-bundle-1.12.720.jar ...
+[2025-02-13T20:21:45.941+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.amazonaws#aws-java-sdk-bundle;1.12.720!aws-java-sdk-bundle.jar (166797ms)
+[2025-02-13T20:21:46.085+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/wildfly/openssl/wildfly-openssl/1.1.3.Final/wildfly-openssl-1.1.3.Final.jar ...
+[2025-02-13T20:21:46.305+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.wildfly.openssl#wildfly-openssl;1.1.3.Final!wildfly-openssl.jar (360ms)
+[2025-02-13T20:21:46.306+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 8380ms :: artifacts dl 167903ms
+[2025-02-13T20:21:46.307+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2025-02-13T20:21:46.308+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.720 from central in [default]
+[2025-02-13T20:21:46.309+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-aws;3.3.6 from central in [default]
+[2025-02-13T20:21:46.310+0000] {subprocess.py:106} INFO - 	org.wildfly.openssl#wildfly-openssl;1.1.3.Final from central in [default]
+[2025-02-13T20:21:46.311+0000] {subprocess.py:106} INFO - 	:: evicted modules:
+[2025-02-13T20:21:46.312+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.367 by [com.amazonaws#aws-java-sdk-bundle;1.12.720] in [default]
+[2025-02-13T20:21:46.313+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2025-02-13T20:21:46.314+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-02-13T20:21:46.315+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-02-13T20:21:46.316+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2025-02-13T20:21:46.318+0000] {subprocess.py:106} INFO - 	|      default     |   4   |   3   |   3   |   1   ||   3   |   3   |
+[2025-02-13T20:21:46.319+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2025-02-13T20:21:46.320+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-4ecc5976-f379-4547-b96c-9437af675806
+[2025-02-13T20:21:46.321+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2025-02-13T20:21:47.024+0000] {subprocess.py:106} INFO - 	3 artifacts copied, 0 already retrieved (372662kB/707ms)
+[2025-02-13T20:21:47.356+0000] {subprocess.py:106} INFO - 25/02/13 20:21:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-02-13T20:21:50.610+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SparkContext: Running Spark version 3.5.4
+[2025-02-13T20:21:50.611+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-02-13T20:21:50.612+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SparkContext: Java version 17.0.14
+[2025-02-13T20:21:50.679+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO ResourceUtils: ==============================================================
+[2025-02-13T20:21:50.680+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-02-13T20:21:50.681+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO ResourceUtils: ==============================================================
+[2025-02-13T20:21:50.682+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SparkContext: Submitted application: Movies_20_21
+[2025-02-13T20:21:50.746+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 12288, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-02-13T20:21:50.779+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO ResourceProfile: Limiting resource is cpus at 2 tasks per executor
+[2025-02-13T20:21:50.785+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-02-13T20:21:50.919+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SecurityManager: Changing view acls to: ***
+[2025-02-13T20:21:50.920+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SecurityManager: Changing modify acls to: ***
+[2025-02-13T20:21:50.924+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SecurityManager: Changing view acls groups to:
+[2025-02-13T20:21:50.929+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SecurityManager: Changing modify acls groups to:
+[2025-02-13T20:21:50.930+0000] {subprocess.py:106} INFO - 25/02/13 20:21:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-02-13T20:21:51.400+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO Utils: Successfully started service 'sparkDriver' on port 39931.
+[2025-02-13T20:21:51.474+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO SparkEnv: Registering MapOutputTracker
+[2025-02-13T20:21:51.548+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO SparkEnv: Registering BlockManagerMaster
+[2025-02-13T20:21:51.589+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-02-13T20:21:51.591+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-02-13T20:21:51.602+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-02-13T20:21:51.652+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-32cb690d-4a42-4cba-a51c-786ef5d03a40
+[2025-02-13T20:21:51.701+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-02-13T20:21:51.749+0000] {subprocess.py:106} INFO - 25/02/13 20:21:51 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-02-13T20:21:52.091+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-02-13T20:21:52.254+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-02-13T20:21:52.371+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar at spark://4dbe8526a981:39931/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar with timestamp 1739478110591
+[2025-02-13T20:21:52.373+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar at spark://4dbe8526a981:39931/jars/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar with timestamp 1739478110591
+[2025-02-13T20:21:52.375+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar at spark://4dbe8526a981:39931/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar with timestamp 1739478110591
+[2025-02-13T20:21:52.387+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar at spark://4dbe8526a981:39931/files/org.apache.hadoop_hadoop-aws-3.3.6.jar with timestamp 1739478110591
+[2025-02-13T20:21:52.388+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO Utils: Copying /home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar to /tmp/spark-721384e5-fce7-40e4-a94c-04a5df5846c5/userFiles-f01275fa-a744-41c3-9b53-e524c8e9c0f0/org.apache.hadoop_hadoop-aws-3.3.6.jar
+[2025-02-13T20:21:52.413+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar at spark://4dbe8526a981:39931/files/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar with timestamp 1739478110591
+[2025-02-13T20:21:52.415+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO Utils: Copying /home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar to /tmp/spark-721384e5-fce7-40e4-a94c-04a5df5846c5/userFiles-f01275fa-a744-41c3-9b53-e524c8e9c0f0/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar
+[2025-02-13T20:21:52.885+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar at spark://4dbe8526a981:39931/files/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar with timestamp 1739478110591
+[2025-02-13T20:21:52.891+0000] {subprocess.py:106} INFO - 25/02/13 20:21:52 INFO Utils: Copying /home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar to /tmp/spark-721384e5-fce7-40e4-a94c-04a5df5846c5/userFiles-f01275fa-a744-41c3-9b53-e524c8e9c0f0/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar
+[2025-02-13T20:21:53.074+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark:7077...
+[2025-02-13T20:21:53.167+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO TransportClientFactory: Successfully created connection to spark/172.18.0.5:7077 after 57 ms (0 ms spent in bootstraps)
+[2025-02-13T20:21:53.465+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250213202153-0000
+[2025-02-13T20:21:53.487+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38975.
+[2025-02-13T20:21:53.488+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO NettyBlockTransferService: Server created on 4dbe8526a981:38975
+[2025-02-13T20:21:53.491+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-02-13T20:21:53.509+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 4dbe8526a981, 38975, None)
+[2025-02-13T20:21:53.515+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO BlockManagerMasterEndpoint: Registering block manager 4dbe8526a981:38975 with 434.4 MiB RAM, BlockManagerId(driver, 4dbe8526a981, 38975, None)
+[2025-02-13T20:21:53.519+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 4dbe8526a981, 38975, None)
+[2025-02-13T20:21:53.524+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 4dbe8526a981, 38975, None)
+[2025-02-13T20:21:53.576+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250213202153-0000/0 on worker-20250213201706-172.18.0.2-33497 (172.18.0.2:33497) with 2 core(s)
+[2025-02-13T20:21:53.582+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO StandaloneSchedulerBackend: Granted executor ID app-20250213202153-0000/0 on hostPort 172.18.0.2:33497 with 2 core(s), 12.0 GiB RAM
+[2025-02-13T20:21:53.584+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250213202153-0000/1 on worker-20250213201707-172.18.0.4-34091 (172.18.0.4:34091) with 2 core(s)
+[2025-02-13T20:21:53.585+0000] {subprocess.py:106} INFO - 25/02/13 20:21:53 INFO StandaloneSchedulerBackend: Granted executor ID app-20250213202153-0000/1 on hostPort 172.18.0.4:34091 with 2 core(s), 12.0 GiB RAM
+[2025-02-13T20:21:54.063+0000] {subprocess.py:106} INFO - 25/02/13 20:21:54 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250213202153-0000/0 is now RUNNING
+[2025-02-13T20:21:54.070+0000] {subprocess.py:106} INFO - 25/02/13 20:21:54 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250213202153-0000/1 is now RUNNING
+[2025-02-13T20:21:54.384+0000] {subprocess.py:106} INFO - 25/02/13 20:21:54 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-02-13T20:22:01.945+0000] {subprocess.py:106} INFO - 25/02/13 20:22:01 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.4:49368) with ID 1,  ResourceProfileId 0
+[2025-02-13T20:22:02.261+0000] {subprocess.py:106} INFO - 25/02/13 20:22:02 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.4:35601 with 7.0 GiB RAM, BlockManagerId(1, 172.18.0.4, 35601, None)
+[2025-02-13T20:22:02.421+0000] {subprocess.py:106} INFO - 25/02/13 20:22:02 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.2:57174) with ID 0,  ResourceProfileId 0
+[2025-02-13T20:22:02.644+0000] {subprocess.py:106} INFO - 25/02/13 20:22:02 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.2:43999 with 7.0 GiB RAM, BlockManagerId(0, 172.18.0.2, 43999, None)
+[2025-02-13T20:22:32.505+0000] {job.py:229} INFO - Heartbeat recovered after 16.94 seconds
+[2025-02-13T20:22:52.917+0000] {job.py:229} INFO - Heartbeat recovered after 30.72 seconds
+[2025-02-13T20:23:14.049+0000] {job.py:229} INFO - Heartbeat recovered after 36.48 seconds
+[2025-02-13T20:23:22.743+0000] {job.py:229} INFO - Heartbeat recovered after 24.77 seconds
+[2025-02-13T20:23:38.919+0000] {job.py:229} INFO - Heartbeat recovered after 19.80 seconds
+[2025-02-13T20:24:32.695+0000] {subprocess.py:106} INFO - 25/02/13 20:24:32 ERROR TransportRequestHandler: Error sending result StreamResponse[streamId=/jars/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar,byteCount=380383554,body=FileSegmentManagedBuffer[file=/home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.720.jar,offset=0,length=380383554]] to /172.18.0.4:49376; closing connection
+[2025-02-13T20:24:32.704+0000] {subprocess.py:106} INFO - io.netty.channel.StacklessClosedChannelException
+[2025-02-13T20:24:32.711+0000] {subprocess.py:106} INFO - 	at io.netty.channel.AbstractChannel.close(ChannelPromise)(Unknown Source)
+[2025-02-13T20:24:32.736+0000] {job.py:229} INFO - Heartbeat recovered after 64.94 seconds
+[2025-02-13T20:25:25.649+0000] {job.py:229} INFO - Heartbeat recovered after 101.66 seconds
+[2025-02-13T20:25:25.675+0000] {subprocess.py:106} INFO - 25/02/13 20:25:25 ERROR TaskSchedulerImpl: Lost executor 1 on 172.18.0.4: Unable to create executor due to null
+[2025-02-13T20:25:25.684+0000] {subprocess.py:106} INFO - 25/02/13 20:25:25 INFO DAGScheduler: Executor lost: 1 (epoch 0)
+[2025-02-13T20:25:25.703+0000] {subprocess.py:106} INFO - 25/02/13 20:25:25 INFO BlockManagerMasterEndpoint: Trying to remove executor 1 from BlockManagerMaster.
+[2025-02-13T20:25:25.705+0000] {subprocess.py:106} INFO - 25/02/13 20:25:25 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(1, 172.18.0.4, 35601, None)
+[2025-02-13T20:25:25.708+0000] {subprocess.py:106} INFO - 25/02/13 20:25:25 INFO BlockManagerMaster: Removed 1 successfully in removeExecutor
+[2025-02-13T20:25:25.712+0000] {subprocess.py:106} INFO - 25/02/13 20:25:25 INFO DAGScheduler: Shuffle files lost for executor: 1 (epoch 0)
+[2025-02-13T20:25:25.817+0000] {subprocess.py:106} INFO - 25/02/13 20:25:25 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250213202153-0000/1 is now EXITED (Command exited with code 1)
+[2025-02-13T20:25:26.306+0000] {subprocess.py:106} INFO - 25/02/13 20:25:26 INFO StandaloneSchedulerBackend: Executor app-20250213202153-0000/1 removed: Command exited with code 1
+[2025-02-13T20:25:26.308+0000] {subprocess.py:106} INFO - 25/02/13 20:25:26 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250213202153-0000/2 on worker-20250213201707-172.18.0.4-34091 (172.18.0.4:34091) with 2 core(s)
+[2025-02-13T20:25:26.310+0000] {subprocess.py:106} INFO - 25/02/13 20:25:26 INFO BlockManagerMaster: Removal of executor 1 requested
+[2025-02-13T20:25:26.315+0000] {subprocess.py:106} INFO - 25/02/13 20:25:26 INFO StandaloneSchedulerBackend: Granted executor ID app-20250213202153-0000/2 on hostPort 172.18.0.4:34091 with 2 core(s), 12.0 GiB RAM
+[2025-02-13T20:25:26.318+0000] {subprocess.py:106} INFO - 25/02/13 20:25:26 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250213202153-0000/2 is now RUNNING
+[2025-02-13T20:25:26.319+0000] {subprocess.py:106} INFO - 25/02/13 20:25:26 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asked to remove non-existent executor 1
+[2025-02-13T20:25:26.320+0000] {subprocess.py:106} INFO - 25/02/13 20:25:26 INFO BlockManagerMasterEndpoint: Trying to remove executor 1 from BlockManagerMaster.
+[2025-02-13T20:25:30.979+0000] {job.py:229} INFO - Heartbeat recovered after 53.17 seconds
+[2025-02-13T20:25:31.253+0000] {subprocess.py:106} INFO - 25/02/13 20:25:31 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.4:58860) with ID 2,  ResourceProfileId 0
+[2025-02-13T20:25:31.454+0000] {subprocess.py:106} INFO - 25/02/13 20:25:31 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.4:43769 with 7.0 GiB RAM, BlockManagerId(2, 172.18.0.4, 43769, None)
+[2025-02-13T20:26:10.463+0000] {job.py:229} INFO - Heartbeat recovered after 39.74 seconds
+[2025-02-13T20:27:06.423+0000] {job.py:229} INFO - Heartbeat recovered after 90.40 seconds
+[2025-02-13T20:27:11.484+0000] {job.py:229} INFO - Heartbeat recovered after 55.96 seconds
+[2025-02-13T20:27:44.844+0000] {job.py:229} INFO - Heartbeat recovered after 13.10 seconds
+[2025-02-13T20:27:49.904+0000] {job.py:229} INFO - Heartbeat recovered after 13.08 seconds
+[2025-02-13T20:29:00.879+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-02-13T20:29:00.881+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-02-13T20:29:00.886+0000] {process_utils.py:132} INFO - Sending 15 to group 74. PIDs of all processes in the group: [76, 244, 74]
+[2025-02-13T20:29:00.887+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 74
+[2025-02-13T20:29:00.892+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-02-13T20:29:00.905+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/***/.local/bin/***", line 8, in <module>
+    sys.exit(main())
+  File "/home/***/.local/lib/python3.12/site-packages/***/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 64, in wrapper
+    providers_configuration_loaded(func)(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 237, in worker
+    _run_command_with_daemon_option(
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 50, in _run_command_with_daemon_option
+    run_command_with_daemon_option(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 230, in run_celery_worker
+    celery_app.worker_main(options)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/base.py", line 391, in worker_main
+    self.start(argv=argv)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/base.py", line 371, in start
+    celery.main(args=argv, standalone_mode=False)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bin/base.py", line 135, in caller
+    return f(ctx, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bin/worker.py", line 356, in worker
+    worker.start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/worker/worker.py", line 202, in start
+    self.blueprint.start(self)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bootsteps.py", line 365, in start
+    return self.obj.start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/base.py", line 130, in start
+    self.on_start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/prefork.py", line 109, in on_start
+    P = self._pool = Pool(processes=self.limit,
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/asynpool.py", line 464, in __init__
+    super().__init__(processes, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 1046, in __init__
+    self._create_worker_process(i)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/asynpool.py", line 482, in _create_worker_process
+    return super()._create_worker_process(i)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 1158, in _create_worker_process
+    w.start()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 120, in start
+    self._popen = self._Popen(self)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/context.py", line 331, in _Popen
+    return Popen(process_obj)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/popen_fork.py", line 22, in __init__
+    self._launch(process_obj)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/popen_fork.py", line 77, in _launch
+    code = process_obj._bootstrap()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 323, in _bootstrap
+    self.run()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 110, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 292, in __call__
+    sys.exit(self.workloop(pid=pid))
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 362, in workloop
+    result = (True, prepare_result(fun(*args, **kwargs)))
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 651, in fast_trace_task
+    R, I, T, Rstr = tasks[task].__trace__(
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 453, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 736, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/executors/celery_executor_utils.py", line 139, in execute_command
+    _execute_in_fork(command_to_exec, celery_task_id)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/executors/celery_executor_utils.py", line 171, in _execute_in_fork
+    args.func(args)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/operators/bash.py", line 257, in execute
+    result = self._run_inline_command(bash_path=bash_path, env=env)
+  File "/home/***/.local/lib/python3.12/site-packages/***/operators/bash.py", line 284, in _run_inline_command
+    return self.subprocess_hook.run_command(
+  File "/home/***/.local/lib/python3.12/site-packages/***/hooks/subprocess.py", line 104, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2025-02-13T20:29:00.911+0000] {subprocess.py:117} INFO - Sending SIGTERM signal to process group
+[2025-02-13T20:29:01.090+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-13T20:29:01.150+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=74, status='terminated', exitcode=0, started='20:18:45') (74) terminated with exit code 0
+[2025-02-13T20:29:01.431+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=76, status='terminated', started='20:18:45') (76) terminated with exit code None
+[2025-02-13T20:29:01.433+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=244, status='terminated', started='20:21:47') (244) terminated with exit code None
