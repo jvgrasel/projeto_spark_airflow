@@ -32,8 +32,8 @@ if not MINIO_ROOT_USER or not MINIO_ROOT_PASSWORD or not MINIO_SERVER:
 spark = SparkSession.builder \
     .appName("Movies_20_21") \
     .master("spark://spark:7077") \
-    .config("spark.executor.memory", "12g")  \
-    .config("spark.executor.cores", "2") \
+    .config("spark.executor.memory", "8g")  \
+    .config("spark.executor.cores", "1") \
     .config("spark.hadoop.fs.s3a.endpoint", MINIO_SERVER) \
     .config("spark.hadoop.fs.s3a.access.key", MINIO_ROOT_USER) \
     .config("spark.hadoop.fs.s3a.secret.key", MINIO_ROOT_PASSWORD) \

@@ -1,0 +1,388 @@
+[2025-02-17T13:40:59.202+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-17T13:40:59.226+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-17T13:40:57.681630+00:00 [queued]>
+[2025-02-17T13:40:59.236+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-17T13:40:57.681630+00:00 [queued]>
+[2025-02-17T13:40:59.237+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-17T13:40:59.253+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_spark_script> on 2025-02-17 13:40:57.681630+00:00
+[2025-02-17T13:40:59.259+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=95) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-17T13:40:59.261+0000] {standard_task_runner.py:72} INFO - Started process 96 to run task
+[2025-02-17T13:40:59.261+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ing_mov_20_21', 'run_spark_script', 'manual__2025-02-17T13:40:57.681630+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/scriptteste.py', '--cfg-path', '/tmp/tmpi6vjl0c3']
+[2025-02-17T13:40:59.263+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask run_spark_script
+[2025-02-17T13:40:59.323+0000] {task_command.py:467} INFO - Running <TaskInstance: ing_mov_20_21.run_spark_script manual__2025-02-17T13:40:57.681630+00:00 [running]> on host f60c9e99bd1e
+[2025-02-17T13:40:59.432+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ing_mov_20_21' AIRFLOW_CTX_TASK_ID='run_spark_script' AIRFLOW_CTX_EXECUTION_DATE='2025-02-17T13:40:57.681630+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-17T13:40:57.681630+00:00'
+[2025-02-17T13:40:59.433+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-17T13:40:59.481+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-17T13:40:59.482+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'spark-submit --packages org.apache.hadoop:hadoop-aws:3.3.6,com.amazonaws:aws-java-sdk-s3:1.12.720 /opt/bitnami/spark/scripts/ing_mov_20_21.py']
+[2025-02-17T13:40:59.491+0000] {subprocess.py:99} INFO - Output:
+[2025-02-17T13:41:02.631+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-02-17T13:41:02.768+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2025-02-17T13:41:02.769+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2025-02-17T13:41:02.776+0000] {subprocess.py:106} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2025-02-17T13:41:02.777+0000] {subprocess.py:106} INFO - com.amazonaws#aws-java-sdk-s3 added as a dependency
+[2025-02-17T13:41:02.778+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-ce22f53c-9bc7-4dec-a9e6-93c0cafaf296;1.0
+[2025-02-17T13:41:02.778+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2025-02-17T13:41:07.036+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.6 in central
+[2025-02-17T13:41:08.401+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.367 in central
+[2025-02-17T13:41:10.713+0000] {subprocess.py:106} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.1.3.Final in central
+[2025-02-17T13:41:12.055+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-s3;1.12.720 in central
+[2025-02-17T13:41:12.491+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-kms;1.12.720 in central
+[2025-02-17T13:41:12.797+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-core;1.12.720 in central
+[2025-02-17T13:41:15.117+0000] {subprocess.py:106} INFO - 	found commons-logging#commons-logging;1.1.3 in central
+[2025-02-17T13:41:17.438+0000] {subprocess.py:106} INFO - 	found commons-codec#commons-codec;1.15 in central
+[2025-02-17T13:41:20.705+0000] {subprocess.py:106} INFO - 	found org.apache.httpcomponents#httpclient;4.5.13 in central
+[2025-02-17T13:41:22.084+0000] {subprocess.py:106} INFO - 	found org.apache.httpcomponents#httpcore;4.4.13 in central
+[2025-02-17T13:41:26.557+0000] {subprocess.py:106} INFO - 	found com.fasterxml.jackson.core#jackson-databind;2.12.7.2 in central
+[2025-02-17T13:41:26.908+0000] {subprocess.py:106} INFO - 	found com.fasterxml.jackson.core#jackson-annotations;2.12.7 in central
+[2025-02-17T13:41:27.252+0000] {subprocess.py:106} INFO - 	found com.fasterxml.jackson.core#jackson-core;2.12.7 in central
+[2025-02-17T13:41:30.575+0000] {subprocess.py:106} INFO - 	found com.fasterxml.jackson.dataformat#jackson-dataformat-cbor;2.12.6 in central
+[2025-02-17T13:41:30.884+0000] {subprocess.py:106} INFO - 	found joda-time#joda-time;2.12.7 in central
+[2025-02-17T13:41:31.192+0000] {subprocess.py:106} INFO - 	found com.amazonaws#jmespath-java;1.12.720 in central
+[2025-02-17T13:41:31.340+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/hadoop-aws-3.3.6.jar ...
+[2025-02-17T13:41:31.896+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-aws;3.3.6!hadoop-aws.jar (689ms)
+[2025-02-17T13:41:32.060+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/1.12.720/aws-java-sdk-s3-1.12.720.jar ...
+[2025-02-17T13:41:32.391+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.amazonaws#aws-java-sdk-s3;1.12.720!aws-java-sdk-s3.jar (494ms)
+[2025-02-17T13:41:34.261+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.367/aws-java-sdk-bundle-1.12.367.jar ...
+[2025-02-17T13:44:32.396+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.amazonaws#aws-java-sdk-bundle;1.12.367!aws-java-sdk-bundle.jar (180004ms)
+[2025-02-17T13:44:32.531+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/wildfly/openssl/wildfly-openssl/1.1.3.Final/wildfly-openssl-1.1.3.Final.jar ...
+[2025-02-17T13:44:32.889+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.wildfly.openssl#wildfly-openssl;1.1.3.Final!wildfly-openssl.jar (491ms)
+[2025-02-17T13:44:33.023+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-kms/1.12.720/aws-java-sdk-kms-1.12.720.jar ...
+[2025-02-17T13:44:33.534+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.amazonaws#aws-java-sdk-kms;1.12.720!aws-java-sdk-kms.jar (644ms)
+[2025-02-17T13:44:33.702+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-core/1.12.720/aws-java-sdk-core-1.12.720.jar ...
+[2025-02-17T13:44:34.332+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.amazonaws#aws-java-sdk-core;1.12.720!aws-java-sdk-core.jar (797ms)
+[2025-02-17T13:44:34.470+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/jmespath-java/1.12.720/jmespath-java-1.12.720.jar ...
+[2025-02-17T13:44:34.615+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.amazonaws#jmespath-java;1.12.720!jmespath-java.jar (281ms)
+[2025-02-17T13:44:34.747+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar ...
+[2025-02-17T13:44:34.903+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] commons-logging#commons-logging;1.1.3!commons-logging.jar (288ms)
+[2025-02-17T13:44:35.037+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/commons-codec/commons-codec/1.15/commons-codec-1.15.jar ...
+[2025-02-17T13:44:35.329+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] commons-codec#commons-codec;1.15!commons-codec.jar (425ms)
+[2025-02-17T13:44:35.463+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar ...
+[2025-02-17T13:44:36.019+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.httpcomponents#httpclient;4.5.13!httpclient.jar (689ms)
+[2025-02-17T13:44:36.152+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.12.7.2/jackson-databind-2.12.7.2.jar ...
+[2025-02-17T13:44:37.127+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-databind;2.12.7.2!jackson-databind.jar(bundle) (1108ms)
+[2025-02-17T13:44:37.261+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.12.6/jackson-dataformat-cbor-2.12.6.jar ...
+[2025-02-17T13:44:37.421+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.fasterxml.jackson.dataformat#jackson-dataformat-cbor;2.12.6!jackson-dataformat-cbor.jar(bundle) (292ms)
+[2025-02-17T13:44:37.554+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/joda-time/joda-time/2.12.7/joda-time-2.12.7.jar ...
+[2025-02-17T13:44:38.012+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] joda-time#joda-time;2.12.7!joda-time.jar (589ms)
+[2025-02-17T13:44:38.147+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar ...
+[2025-02-17T13:44:38.444+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.httpcomponents#httpcore;4.4.13!httpcore.jar (430ms)
+[2025-02-17T13:44:38.578+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.12.7/jackson-annotations-2.12.7.jar ...
+[2025-02-17T13:44:38.741+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-annotations;2.12.7!jackson-annotations.jar(bundle) (295ms)
+[2025-02-17T13:44:38.874+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.12.7/jackson-core-2.12.7.jar ...
+[2025-02-17T13:44:39.184+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-core;2.12.7!jackson-core.jar(bundle) (443ms)
+[2025-02-17T13:44:39.185+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 28429ms :: artifacts dl 187978ms
+[2025-02-17T13:44:39.186+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2025-02-17T13:44:39.187+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.367 from central in [default]
+[2025-02-17T13:44:39.188+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-core;1.12.720 from central in [default]
+[2025-02-17T13:44:39.188+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-kms;1.12.720 from central in [default]
+[2025-02-17T13:44:39.189+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-s3;1.12.720 from central in [default]
+[2025-02-17T13:44:39.190+0000] {subprocess.py:106} INFO - 	com.amazonaws#jmespath-java;1.12.720 from central in [default]
+[2025-02-17T13:44:39.190+0000] {subprocess.py:106} INFO - 	com.fasterxml.jackson.core#jackson-annotations;2.12.7 from central in [default]
+[2025-02-17T13:44:39.191+0000] {subprocess.py:106} INFO - 	com.fasterxml.jackson.core#jackson-core;2.12.7 from central in [default]
+[2025-02-17T13:44:39.191+0000] {subprocess.py:106} INFO - 	com.fasterxml.jackson.core#jackson-databind;2.12.7.2 from central in [default]
+[2025-02-17T13:44:39.192+0000] {subprocess.py:106} INFO - 	com.fasterxml.jackson.dataformat#jackson-dataformat-cbor;2.12.6 from central in [default]
+[2025-02-17T13:44:39.193+0000] {subprocess.py:106} INFO - 	commons-codec#commons-codec;1.15 from central in [default]
+[2025-02-17T13:44:39.193+0000] {subprocess.py:106} INFO - 	commons-logging#commons-logging;1.1.3 from central in [default]
+[2025-02-17T13:44:39.194+0000] {subprocess.py:106} INFO - 	joda-time#joda-time;2.12.7 from central in [default]
+[2025-02-17T13:44:39.194+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-aws;3.3.6 from central in [default]
+[2025-02-17T13:44:39.195+0000] {subprocess.py:106} INFO - 	org.apache.httpcomponents#httpclient;4.5.13 from central in [default]
+[2025-02-17T13:44:39.196+0000] {subprocess.py:106} INFO - 	org.apache.httpcomponents#httpcore;4.4.13 from central in [default]
+[2025-02-17T13:44:39.196+0000] {subprocess.py:106} INFO - 	org.wildfly.openssl#wildfly-openssl;1.1.3.Final from central in [default]
+[2025-02-17T13:44:39.197+0000] {subprocess.py:106} INFO - 	:: evicted modules:
+[2025-02-17T13:44:39.198+0000] {subprocess.py:106} INFO - 	commons-logging#commons-logging;1.2 by [commons-logging#commons-logging;1.1.3] in [default]
+[2025-02-17T13:44:39.198+0000] {subprocess.py:106} INFO - 	commons-codec#commons-codec;1.11 by [commons-codec#commons-codec;1.15] in [default]
+[2025-02-17T13:44:39.199+0000] {subprocess.py:106} INFO - 	com.fasterxml.jackson.core#jackson-databind;2.12.6 by [com.fasterxml.jackson.core#jackson-databind;2.12.7.2] in [default]
+[2025-02-17T13:44:39.200+0000] {subprocess.py:106} INFO - 	com.fasterxml.jackson.core#jackson-core;2.12.6 by [com.fasterxml.jackson.core#jackson-core;2.12.7] in [default]
+[2025-02-17T13:44:39.200+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2025-02-17T13:44:39.201+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-02-17T13:44:39.201+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-02-17T13:44:39.202+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2025-02-17T13:44:39.203+0000] {subprocess.py:106} INFO - 	|      default     |   20  |   16  |   16  |   4   ||   16  |   16  |
+[2025-02-17T13:44:39.203+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2025-02-17T13:44:39.204+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-ce22f53c-9bc7-4dec-a9e6-93c0cafaf296
+[2025-02-17T13:44:39.205+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2025-02-17T13:44:39.573+0000] {subprocess.py:106} INFO - 	16 artifacts copied, 0 already retrieved (311600kB/379ms)
+[2025-02-17T13:44:40.024+0000] {subprocess.py:106} INFO - 25/02/17 13:44:40 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-02-17T13:44:43.164+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkContext: Running Spark version 3.5.4
+[2025-02-17T13:44:43.165+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-02-17T13:44:43.166+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkContext: Java version 17.0.14
+[2025-02-17T13:44:43.226+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO ResourceUtils: ==============================================================
+[2025-02-17T13:44:43.228+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-02-17T13:44:43.229+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO ResourceUtils: ==============================================================
+[2025-02-17T13:44:43.230+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkContext: Submitted application: Movies_20_21
+[2025-02-17T13:44:43.270+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 8192, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-02-17T13:44:43.281+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2025-02-17T13:44:43.283+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-02-17T13:44:43.368+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SecurityManager: Changing view acls to: ***
+[2025-02-17T13:44:43.369+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SecurityManager: Changing modify acls to: ***
+[2025-02-17T13:44:43.370+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SecurityManager: Changing view acls groups to:
+[2025-02-17T13:44:43.371+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SecurityManager: Changing modify acls groups to:
+[2025-02-17T13:44:43.371+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-02-17T13:44:43.719+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO Utils: Successfully started service 'sparkDriver' on port 35787.
+[2025-02-17T13:44:43.767+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkEnv: Registering MapOutputTracker
+[2025-02-17T13:44:43.832+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkEnv: Registering BlockManagerMaster
+[2025-02-17T13:44:43.857+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-02-17T13:44:43.858+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-02-17T13:44:43.863+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-02-17T13:44:43.894+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-20f1392f-994c-4996-a8d3-dcfc2122b281
+[2025-02-17T13:44:43.910+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-02-17T13:44:43.929+0000] {subprocess.py:106} INFO - 25/02/17 13:44:43 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-02-17T13:44:44.172+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-02-17T13:44:44.309+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-02-17T13:44:44.415+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar at spark://f60c9e99bd1e:35787/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.423+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-s3-1.12.720.jar at spark://f60c9e99bd1e:35787/jars/com.amazonaws_aws-java-sdk-s3-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.431+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar at spark://f60c9e99bd1e:35787/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.435+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar at spark://f60c9e99bd1e:35787/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.438+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-kms-1.12.720.jar at spark://f60c9e99bd1e:35787/jars/com.amazonaws_aws-java-sdk-kms-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.440+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-core-1.12.720.jar at spark://f60c9e99bd1e:35787/jars/com.amazonaws_aws-java-sdk-core-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.442+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.amazonaws_jmespath-java-1.12.720.jar at spark://f60c9e99bd1e:35787/jars/com.amazonaws_jmespath-java-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.446+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://f60c9e99bd1e:35787/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.450+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/commons-codec_commons-codec-1.15.jar at spark://f60c9e99bd1e:35787/jars/commons-codec_commons-codec-1.15.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.454+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar at spark://f60c9e99bd1e:35787/jars/org.apache.httpcomponents_httpclient-4.5.13.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.455+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-databind-2.12.7.2.jar at spark://f60c9e99bd1e:35787/jars/com.fasterxml.jackson.core_jackson-databind-2.12.7.2.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.456+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.fasterxml.jackson.dataformat_jackson-dataformat-cbor-2.12.6.jar at spark://f60c9e99bd1e:35787/jars/com.fasterxml.jackson.dataformat_jackson-dataformat-cbor-2.12.6.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.457+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/joda-time_joda-time-2.12.7.jar at spark://f60c9e99bd1e:35787/jars/joda-time_joda-time-2.12.7.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.457+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/org.apache.httpcomponents_httpcore-4.4.13.jar at spark://f60c9e99bd1e:35787/jars/org.apache.httpcomponents_httpcore-4.4.13.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.458+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-annotations-2.12.7.jar at spark://f60c9e99bd1e:35787/jars/com.fasterxml.jackson.core_jackson-annotations-2.12.7.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.459+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added JAR file:///home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-core-2.12.7.jar at spark://f60c9e99bd1e:35787/jars/com.fasterxml.jackson.core_jackson-core-2.12.7.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.460+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar at spark://f60c9e99bd1e:35787/files/org.apache.hadoop_hadoop-aws-3.3.6.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.462+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/org.apache.hadoop_hadoop-aws-3.3.6.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/org.apache.hadoop_hadoop-aws-3.3.6.jar
+[2025-02-17T13:44:44.471+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-s3-1.12.720.jar at spark://f60c9e99bd1e:35787/files/com.amazonaws_aws-java-sdk-s3-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.474+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-s3-1.12.720.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.amazonaws_aws-java-sdk-s3-1.12.720.jar
+[2025-02-17T13:44:44.486+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar at spark://f60c9e99bd1e:35787/files/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.487+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.amazonaws_aws-java-sdk-bundle-1.12.367.jar
+[2025-02-17T13:44:44.764+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar at spark://f60c9e99bd1e:35787/files/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.765+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/org.wildfly.openssl_wildfly-openssl-1.1.3.Final.jar
+[2025-02-17T13:44:44.771+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-kms-1.12.720.jar at spark://f60c9e99bd1e:35787/files/com.amazonaws_aws-java-sdk-kms-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.772+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-kms-1.12.720.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.amazonaws_aws-java-sdk-kms-1.12.720.jar
+[2025-02-17T13:44:44.777+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-core-1.12.720.jar at spark://f60c9e99bd1e:35787/files/com.amazonaws_aws-java-sdk-core-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.778+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.amazonaws_aws-java-sdk-core-1.12.720.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.amazonaws_aws-java-sdk-core-1.12.720.jar
+[2025-02-17T13:44:44.786+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.amazonaws_jmespath-java-1.12.720.jar at spark://f60c9e99bd1e:35787/files/com.amazonaws_jmespath-java-1.12.720.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.787+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.amazonaws_jmespath-java-1.12.720.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.amazonaws_jmespath-java-1.12.720.jar
+[2025-02-17T13:44:44.792+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://f60c9e99bd1e:35787/files/commons-logging_commons-logging-1.1.3.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.793+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/commons-logging_commons-logging-1.1.3.jar
+[2025-02-17T13:44:44.797+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/commons-codec_commons-codec-1.15.jar at spark://f60c9e99bd1e:35787/files/commons-codec_commons-codec-1.15.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.798+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/commons-codec_commons-codec-1.15.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/commons-codec_commons-codec-1.15.jar
+[2025-02-17T13:44:44.804+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar at spark://f60c9e99bd1e:35787/files/org.apache.httpcomponents_httpclient-4.5.13.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.806+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/org.apache.httpcomponents_httpclient-4.5.13.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/org.apache.httpcomponents_httpclient-4.5.13.jar
+[2025-02-17T13:44:44.812+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-databind-2.12.7.2.jar at spark://f60c9e99bd1e:35787/files/com.fasterxml.jackson.core_jackson-databind-2.12.7.2.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.813+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-databind-2.12.7.2.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.fasterxml.jackson.core_jackson-databind-2.12.7.2.jar
+[2025-02-17T13:44:44.821+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.fasterxml.jackson.dataformat_jackson-dataformat-cbor-2.12.6.jar at spark://f60c9e99bd1e:35787/files/com.fasterxml.jackson.dataformat_jackson-dataformat-cbor-2.12.6.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.822+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.fasterxml.jackson.dataformat_jackson-dataformat-cbor-2.12.6.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.fasterxml.jackson.dataformat_jackson-dataformat-cbor-2.12.6.jar
+[2025-02-17T13:44:44.827+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/joda-time_joda-time-2.12.7.jar at spark://f60c9e99bd1e:35787/files/joda-time_joda-time-2.12.7.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.828+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/joda-time_joda-time-2.12.7.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/joda-time_joda-time-2.12.7.jar
+[2025-02-17T13:44:44.833+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/org.apache.httpcomponents_httpcore-4.4.13.jar at spark://f60c9e99bd1e:35787/files/org.apache.httpcomponents_httpcore-4.4.13.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.834+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/org.apache.httpcomponents_httpcore-4.4.13.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/org.apache.httpcomponents_httpcore-4.4.13.jar
+[2025-02-17T13:44:44.841+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-annotations-2.12.7.jar at spark://f60c9e99bd1e:35787/files/com.fasterxml.jackson.core_jackson-annotations-2.12.7.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.844+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-annotations-2.12.7.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.fasterxml.jackson.core_jackson-annotations-2.12.7.jar
+[2025-02-17T13:44:44.848+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO SparkContext: Added file file:///home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-core-2.12.7.jar at spark://f60c9e99bd1e:35787/files/com.fasterxml.jackson.core_jackson-core-2.12.7.jar with timestamp 1739799883151
+[2025-02-17T13:44:44.849+0000] {subprocess.py:106} INFO - 25/02/17 13:44:44 INFO Utils: Copying /home/***/.ivy2/jars/com.fasterxml.jackson.core_jackson-core-2.12.7.jar to /tmp/spark-ed495fbf-8da0-41ab-94fd-d0989e31b780/userFiles-b067d30c-751e-427d-a35b-d1a69cc2072d/com.fasterxml.jackson.core_jackson-core-2.12.7.jar
+[2025-02-17T13:44:45.033+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark:7077...
+[2025-02-17T13:44:45.089+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO TransportClientFactory: Successfully created connection to spark/172.18.0.4:7077 after 32 ms (0 ms spent in bootstraps)
+[2025-02-17T13:44:45.313+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250217134445-0000
+[2025-02-17T13:44:45.356+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46521.
+[2025-02-17T13:44:45.357+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO NettyBlockTransferService: Server created on f60c9e99bd1e:46521
+[2025-02-17T13:44:45.363+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-02-17T13:44:45.373+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250217134445-0000/0 on worker-20250217133712-172.18.0.7-41591 (172.18.0.7:41591) with 1 core(s)
+[2025-02-17T13:44:45.379+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneSchedulerBackend: Granted executor ID app-20250217134445-0000/0 on hostPort 172.18.0.7:41591 with 1 core(s), 8.0 GiB RAM
+[2025-02-17T13:44:45.384+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250217134445-0000/1 on worker-20250217133711-172.18.0.2-43983 (172.18.0.2:43983) with 1 core(s)
+[2025-02-17T13:44:45.387+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneSchedulerBackend: Granted executor ID app-20250217134445-0000/1 on hostPort 172.18.0.2:43983 with 1 core(s), 8.0 GiB RAM
+[2025-02-17T13:44:45.391+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, f60c9e99bd1e, 46521, None)
+[2025-02-17T13:44:45.398+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO BlockManagerMasterEndpoint: Registering block manager f60c9e99bd1e:46521 with 434.4 MiB RAM, BlockManagerId(driver, f60c9e99bd1e, 46521, None)
+[2025-02-17T13:44:45.402+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, f60c9e99bd1e, 46521, None)
+[2025-02-17T13:44:45.407+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, f60c9e99bd1e, 46521, None)
+[2025-02-17T13:44:45.714+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250217134445-0000/1 is now RUNNING
+[2025-02-17T13:44:45.717+0000] {subprocess.py:106} INFO - 25/02/17 13:44:45 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250217134445-0000/0 is now RUNNING
+[2025-02-17T13:44:46.149+0000] {subprocess.py:106} INFO - 25/02/17 13:44:46 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-02-17T13:44:51.680+0000] {subprocess.py:106} INFO - 25/02/17 13:44:51 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.7:60450) with ID 0,  ResourceProfileId 0
+[2025-02-17T13:44:51.699+0000] {subprocess.py:106} INFO - 25/02/17 13:44:51 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.2:57844) with ID 1,  ResourceProfileId 0
+[2025-02-17T13:44:52.002+0000] {subprocess.py:106} INFO - 25/02/17 13:44:52 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.7:42401 with 4.6 GiB RAM, BlockManagerId(0, 172.18.0.7, 42401, None)
+[2025-02-17T13:44:52.020+0000] {subprocess.py:106} INFO - 25/02/17 13:44:52 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.2:44225 with 4.6 GiB RAM, BlockManagerId(1, 172.18.0.2, 44225, None)
+[2025-02-17T13:45:40.672+0000] {job.py:229} INFO - Heartbeat recovered after 46.36 seconds
+[2025-02-17T13:45:46.749+0000] {job.py:229} INFO - Heartbeat recovered after 44.97 seconds
+[2025-02-17T13:45:59.346+0000] {job.py:229} INFO - Heartbeat recovered after 13.62 seconds
+[2025-02-17T13:46:01.551+0000] {subprocess.py:106} INFO - 25/02/17 13:46:01 INFO AsyncEventQueue: Process of event SparkListenerExecutorMetricsUpdate(1,WrappedArray(),Map()) by listener AppStatusListener took 2.189748943s.
+[2025-02-17T13:46:43.809+0000] {job.py:229} INFO - Heartbeat recovered after 52.01 seconds
+[2025-02-17T13:47:06.140+0000] {job.py:229} INFO - Heartbeat recovered after 61.74 seconds
+[2025-02-17T13:47:20.980+0000] {job.py:229} INFO - Heartbeat recovered after 32.08 seconds
+[2025-02-17T13:57:40.187+0000] {job.py:229} INFO - Heartbeat recovered after 628.99 seconds
+[2025-02-17T13:57:40.200+0000] {local_task_job_runner.py:228} ERROR - Heartbeat time limit exceeded!
+[2025-02-17T13:57:40.201+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-02-17T13:57:40.205+0000] {process_utils.py:132} INFO - Sending 15 to group 96. PIDs of all processes in the group: [98, 240, 96]
+[2025-02-17T13:57:40.206+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 96
+[2025-02-17T13:57:40.207+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-02-17T13:57:40.214+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/***/.local/bin/***", line 8, in <module>
+    sys.exit(main())
+  File "/home/***/.local/lib/python3.12/site-packages/***/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 64, in wrapper
+    providers_configuration_loaded(func)(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 237, in worker
+    _run_command_with_daemon_option(
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 50, in _run_command_with_daemon_option
+    run_command_with_daemon_option(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 230, in run_celery_worker
+    celery_app.worker_main(options)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/base.py", line 391, in worker_main
+    self.start(argv=argv)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/base.py", line 371, in start
+    celery.main(args=argv, standalone_mode=False)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bin/base.py", line 135, in caller
+    return f(ctx, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bin/worker.py", line 356, in worker
+    worker.start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/worker/worker.py", line 202, in start
+    self.blueprint.start(self)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bootsteps.py", line 365, in start
+    return self.obj.start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/base.py", line 130, in start
+    self.on_start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/prefork.py", line 109, in on_start
+    P = self._pool = Pool(processes=self.limit,
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/asynpool.py", line 464, in __init__
+    super().__init__(processes, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 1046, in __init__
+    self._create_worker_process(i)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/asynpool.py", line 482, in _create_worker_process
+    return super()._create_worker_process(i)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 1158, in _create_worker_process
+    w.start()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 120, in start
+    self._popen = self._Popen(self)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/context.py", line 331, in _Popen
+    return Popen(process_obj)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/popen_fork.py", line 22, in __init__
+    self._launch(process_obj)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/popen_fork.py", line 77, in _launch
+    code = process_obj._bootstrap()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 323, in _bootstrap
+    self.run()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 110, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 292, in __call__
+    sys.exit(self.workloop(pid=pid))
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 362, in workloop
+    result = (True, prepare_result(fun(*args, **kwargs)))
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 651, in fast_trace_task
+    R, I, T, Rstr = tasks[task].__trace__(
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 453, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 736, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/executors/celery_executor_utils.py", line 139, in execute_command
+    _execute_in_fork(command_to_exec, celery_task_id)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/executors/celery_executor_utils.py", line 171, in _execute_in_fork
+    args.func(args)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/operators/bash.py", line 257, in execute
+    result = self._run_inline_command(bash_path=bash_path, env=env)
+  File "/home/***/.local/lib/python3.12/site-packages/***/operators/bash.py", line 284, in _run_inline_command
+    return self.subprocess_hook.run_command(
+  File "/home/***/.local/lib/python3.12/site-packages/***/hooks/subprocess.py", line 104, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2025-02-17T13:57:40.220+0000] {subprocess.py:117} INFO - Sending SIGTERM signal to process group
+[2025-02-17T13:57:40.235+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=240, status='terminated', started='13:44:39') (240) terminated with exit code None
+[2025-02-17T13:57:40.463+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 257, in execute
+    result = self._run_inline_command(bash_path=bash_path, env=env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 284, in _run_inline_command
+    return self.subprocess_hook.run_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/hooks/subprocess.py", line 104, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3097, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-02-17T13:57:40.540+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=ing_mov_20_21, task_id=run_spark_script, run_id=manual__2025-02-17T13:40:57.681630+00:00, execution_date=20250217T134057, start_date=20250217T134059, end_date=20250217T135740
+[2025-02-17T13:57:43.055+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-17T13:57:43.582+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=96, status='terminated', exitcode=2, started='13:40:58') (96) terminated with exit code 2
+[2025-02-17T13:57:44.204+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=98, status='terminated', started='13:40:58') (98) terminated with exit code None
+[2025-02-17T13:57:44.357+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics

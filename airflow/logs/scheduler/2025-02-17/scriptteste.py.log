@@ -1,0 +1,223 @@
+[2025-02-17T13:21:53.977+0000] {processor.py:186} INFO - Started process (PID=82) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:21:53.978+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:21:53.982+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:21:53.981+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:21:54.009+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:21:54.059+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:21:54.058+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:21:54.158+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:21:54.158+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:21:54.207+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.240 seconds
+[2025-02-17T13:22:24.293+0000] {processor.py:186} INFO - Started process (PID=89) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:22:24.294+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:22:24.296+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:22:24.296+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:22:24.314+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:22:24.347+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:22:24.347+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:22:24.364+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:22:24.364+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:22:24.408+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.122 seconds
+[2025-02-17T13:23:12.061+0000] {processor.py:186} INFO - Started process (PID=70) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:23:12.063+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:23:12.066+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:23:12.065+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:23:12.096+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:23:12.141+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:23:12.141+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:23:12.178+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:23:12.177+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:23:12.231+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.180 seconds
+[2025-02-17T13:23:42.418+0000] {processor.py:186} INFO - Started process (PID=77) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:23:42.419+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:23:42.423+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:23:42.422+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:23:42.448+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:23:42.500+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:23:42.500+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:23:42.524+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:23:42.523+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:23:42.569+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.159 seconds
+[2025-02-17T13:38:41.029+0000] {processor.py:186} INFO - Started process (PID=67) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:38:41.031+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:38:41.034+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.034+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:38:41.075+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:38:41.564+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.562+0000] {override.py:1912} INFO - Created Permission View: can read on DAG:ing_mov_20_21
+[2025-02-17T13:38:41.584+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.583+0000] {override.py:1912} INFO - Created Permission View: can edit on DAG:ing_mov_20_21
+[2025-02-17T13:38:41.600+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.600+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG:ing_mov_20_21
+[2025-02-17T13:38:41.615+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.614+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG Run:ing_mov_20_21
+[2025-02-17T13:38:41.630+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.629+0000] {override.py:1912} INFO - Created Permission View: menu access on DAG Run:ing_mov_20_21
+[2025-02-17T13:38:41.647+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.647+0000] {override.py:1912} INFO - Created Permission View: can read on DAG Run:ing_mov_20_21
+[2025-02-17T13:38:41.662+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.661+0000] {override.py:1912} INFO - Created Permission View: can create on DAG Run:ing_mov_20_21
+[2025-02-17T13:38:41.663+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.663+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:38:41.688+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.687+0000] {dag.py:3262} INFO - Creating ORM DAG for ing_mov_20_21
+[2025-02-17T13:38:41.690+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:38:41.689+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:38:41.722+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.702 seconds
+[2025-02-17T13:39:11.990+0000] {processor.py:186} INFO - Started process (PID=74) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:39:11.991+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:39:11.994+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:39:11.993+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:39:12.013+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:39:12.048+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:39:12.048+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:39:12.062+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:39:12.062+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:39:12.089+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.105 seconds
+[2025-02-17T13:39:42.223+0000] {processor.py:186} INFO - Started process (PID=81) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:39:42.224+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:39:42.226+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:39:42.226+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:39:42.246+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:39:42.297+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:39:42.297+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:39:42.319+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:39:42.319+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:39:42.362+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.148 seconds
+[2025-02-17T13:40:12.568+0000] {processor.py:186} INFO - Started process (PID=88) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:40:12.570+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:40:12.574+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:40:12.574+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:40:12.603+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:40:12.679+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:40:12.678+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:40:12.714+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:40:12.714+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:40:12.768+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.215 seconds
+[2025-02-17T13:40:42.814+0000] {processor.py:186} INFO - Started process (PID=95) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:40:42.815+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:40:42.817+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:40:42.817+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:40:42.835+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:40:42.869+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:40:42.869+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:40:42.884+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:40:42.884+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:40:42.914+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.105 seconds
+[2025-02-17T13:41:13.071+0000] {processor.py:186} INFO - Started process (PID=102) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:41:13.072+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:41:13.077+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:41:13.076+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:41:13.101+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:41:13.155+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:41:13.154+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:41:13.179+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:41:13.178+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:41:13.204+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.144 seconds
+[2025-02-17T13:41:43.560+0000] {processor.py:186} INFO - Started process (PID=108) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:41:43.562+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:41:43.569+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:41:43.567+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:41:43.634+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:41:43.682+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:41:43.682+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:41:43.710+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:41:43.710+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:41:43.744+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.194 seconds
+[2025-02-17T13:42:13.812+0000] {processor.py:186} INFO - Started process (PID=115) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:42:13.814+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:42:13.817+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:42:13.816+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:42:13.855+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:42:13.887+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:42:13.887+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:42:13.910+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:42:13.910+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:42:14.164+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.362 seconds
+[2025-02-17T13:42:44.290+0000] {processor.py:186} INFO - Started process (PID=122) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:42:44.293+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:42:44.299+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:42:44.298+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:42:44.361+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:42:44.434+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:42:44.434+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:42:44.484+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:42:44.482+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:42:50.675+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 6.399 seconds
+[2025-02-17T13:43:20.766+0000] {processor.py:186} INFO - Started process (PID=130) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:43:20.768+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:43:20.774+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:43:20.774+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:43:20.812+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:43:20.862+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:43:20.861+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:43:20.892+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:43:20.891+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:43:20.943+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.185 seconds
+[2025-02-17T13:43:51.103+0000] {processor.py:186} INFO - Started process (PID=137) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:43:51.104+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:43:51.108+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:43:51.107+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:43:51.151+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:43:51.193+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:43:51.193+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:43:51.223+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:43:51.222+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:43:51.257+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.170 seconds
+[2025-02-17T13:44:21.489+0000] {processor.py:186} INFO - Started process (PID=144) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:44:21.491+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:44:21.498+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:44:21.497+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:44:21.529+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:44:21.579+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:44:21.579+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:44:21.626+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:44:21.626+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:44:21.665+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.186 seconds
+[2025-02-17T13:44:51.839+0000] {processor.py:186} INFO - Started process (PID=151) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:44:51.841+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:44:51.845+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:44:51.844+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:44:51.870+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:44:51.929+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:44:51.927+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:44:51.963+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:44:51.963+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:44:52.104+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.273 seconds
+[2025-02-17T13:45:22.168+0000] {processor.py:186} INFO - Started process (PID=158) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:45:22.169+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:45:22.173+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:45:22.172+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:45:22.192+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:45:22.228+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:45:22.227+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:45:22.250+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:45:22.250+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:45:40.685+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 18.525 seconds
+[2025-02-17T13:46:10.918+0000] {processor.py:186} INFO - Started process (PID=171) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:46:10.919+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:46:10.922+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:46:10.921+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:46:10.941+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:46:10.981+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:46:10.980+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:46:11.000+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:46:11.000+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:46:43.835+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 32.926 seconds
+[2025-02-17T13:47:14.112+0000] {processor.py:186} INFO - Started process (PID=184) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:47:14.113+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:47:14.115+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:47:14.115+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:47:14.131+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:47:14.160+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:47:14.160+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:47:14.181+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:47:14.181+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:48:34.688+0000] {processor.py:186} INFO - Started process (PID=203) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:48:34.690+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:48:34.693+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:48:34.693+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:48:34.712+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:48:34.748+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:48:34.747+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:48:37.568+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:48:37.567+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:57:40.967+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 546.284 seconds
+[2025-02-17T13:58:12.671+0000] {processor.py:186} INFO - Started process (PID=320) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:58:12.672+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:58:12.674+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:58:12.674+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:58:12.697+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:58:12.845+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:58:12.844+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:58:13.016+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:58:13.015+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:58:20.882+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 8.223 seconds
+[2025-02-17T13:58:51.099+0000] {processor.py:186} INFO - Started process (PID=327) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:58:51.102+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:58:51.106+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:58:51.105+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:58:51.129+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:58:51.165+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:58:51.165+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:58:51.185+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:58:51.184+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:59:01.406+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 10.318 seconds
+[2025-02-17T13:59:31.641+0000] {processor.py:186} INFO - Started process (PID=342) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:59:31.642+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T13:59:31.644+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:59:31.644+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:59:31.661+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T13:59:31.701+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:59:31.700+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T13:59:31.727+0000] {logging_mixin.py:190} INFO - [2025-02-17T13:59:31.726+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T13:59:41.118+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 9.484 seconds
+[2025-02-17T14:00:11.359+0000] {processor.py:186} INFO - Started process (PID=349) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:00:11.360+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T14:00:11.363+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:00:11.362+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:00:11.389+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:00:11.426+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:00:11.425+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T14:00:11.445+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:00:11.445+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T14:00:18.722+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 7.374 seconds
+[2025-02-17T14:01:12.434+0000] {processor.py:186} INFO - Started process (PID=362) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:01:12.435+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T14:01:12.447+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:01:12.446+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:01:12.502+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:01:12.580+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:01:12.580+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T14:01:12.650+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:01:12.649+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T14:01:13.860+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 1.435 seconds
+[2025-02-17T14:01:44.081+0000] {processor.py:186} INFO - Started process (PID=369) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:01:44.082+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T14:01:44.083+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:01:44.083+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:01:44.099+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:01:44.141+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:01:44.140+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T14:01:44.161+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:01:44.160+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T14:01:44.867+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 0.792 seconds
+[2025-02-17T14:02:15.099+0000] {processor.py:186} INFO - Started process (PID=376) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:02:15.101+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T14:02:15.102+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:02:15.102+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:02:15.124+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:02:15.160+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:02:15.160+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T14:02:15.196+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:02:15.195+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T14:02:17.924+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 2.832 seconds
+[2025-02-17T14:02:48.188+0000] {processor.py:186} INFO - Started process (PID=383) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:02:48.190+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T14:02:48.192+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:02:48.192+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:02:48.214+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:02:48.242+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:02:48.241+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T14:02:48.258+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:02:48.258+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T14:02:52.353+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 4.172 seconds
+[2025-02-17T14:03:22.712+0000] {processor.py:186} INFO - Started process (PID=390) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:03:22.714+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T14:03:22.717+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:03:22.716+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:03:22.742+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:03:22.779+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:03:22.779+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T14:03:22.797+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:03:22.796+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
+[2025-02-17T14:03:36.697+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/scriptteste.py took 13.995 seconds
+[2025-02-17T14:04:06.949+0000] {processor.py:186} INFO - Started process (PID=403) to work on /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:04:06.950+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/scriptteste.py for tasks to queue
+[2025-02-17T14:04:06.952+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:04:06.951+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:04:06.970+0000] {processor.py:925} INFO - DAG(s) 'ing_mov_20_21' retrieved from /opt/airflow/dags/scriptteste.py
+[2025-02-17T14:04:07.002+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:04:07.001+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-17T14:04:07.020+0000] {logging_mixin.py:190} INFO - [2025-02-17T14:04:07.020+0000] {dag.py:4180} INFO - Setting next_dagrun for ing_mov_20_21 to None, run_after=None
