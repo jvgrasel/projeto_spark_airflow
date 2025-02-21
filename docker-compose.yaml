@@ -3,7 +3,7 @@ x-airflow-common:
   build: ./airflow/.
   env_file:
       - ./env/api.env
-      - ./env/minio.env
+      # - ./env/minio.env
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -192,13 +192,16 @@ services:
       - S3_ENDPOINT=http://minio:9000
     ports:
       - '8082:8080'
+    volumes:
+    - ivy-cache:/home/spark/.ivy2
+    - "./spark/scripts:/opt/bitnami/spark/scripts" 
   spark-worker:
     build:
       context: .  
       dockerfile: dockerfile.sparkworker
     env_file:
       - ./env/api.env
-      - ./env/minio.env
+      # - ./env/minio.env
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
@@ -214,6 +217,7 @@ services:
     ports:
       - "8888:8888"  # Jupyter Notebook
     volumes:
+      - ivy-cache:/home/spark/.ivy2
       - "./spark/scripts:/opt/bitnami/spark/scripts"
   spark-worker2:
     build:
@@ -221,7 +225,7 @@ services:
       dockerfile: dockerfile.sparkworker
     env_file:
       - ./env/api.env
-      - ./env/minio.env
+      # - ./env/minio.env
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
@@ -235,6 +239,7 @@ services:
       - AWS_REGION=us-east-1
       - S3_ENDPOINT=http://minio:9000
     volumes:
+      - ivy-cache:/home/spark/.ivy2
       - "./spark/scripts:/opt/bitnami/spark/scripts"
   minio:
     image: minio/minio
@@ -257,6 +262,12 @@ services:
 
 volumes:
   postgres-db-volume:
+  ivy-cache:  # Cache persistente para as dependências do Spark
+    driver: local
+    driver_opts:
+      type: none
+      device: "./spark/spark-ivy-cache"
+      o: bind
   minio_data:
     driver: local
     driver_opts:

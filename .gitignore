@@ -1,1 +1,3 @@
 ./airflow/logs*
+./spark/scripts/.ipynb_checkpoints*
+./spark/scripts/.Trash-0

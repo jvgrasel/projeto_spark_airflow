@@ -1,5 +1,6 @@
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+from airflow.models import Variable  # Importar para ler variáveis
 from datetime import datetime
 
 default_args = {
@@ -16,12 +17,23 @@ dag = DAG(
     catchup=False,
 )
 
-run_spark_script = BashOperator(
+# Recuperar credenciais do Airflow Variables
+MINIO_ROOT_USER = Variable.get("MINIO_ROOT_USER")
+MINIO_ROOT_PASSWORD = Variable.get("MINIO_ROOT_PASSWORD")
+
+spark_task = SparkSubmitOperator(
     task_id="run_spark_script",
-    bash_command="spark-submit "
-                 "--packages org.apache.hadoop:hadoop-aws:3.3.6,com.amazonaws:aws-java-sdk-s3:1.12.720 "  # SDK reduzido
-                 "/opt/bitnami/spark/scripts/ing_mov_20_21.py",
+    application="/opt/bitnami/spark/scripts/ing_mov_20_21.py",
+    conn_id="spark_default",
+    verbose=True,
+    driver_memory="4g",
+    packages="org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.262",
+    conf={
+        "spark.hadoop.fs.s3a.access.key": MINIO_ROOT_USER,
+        "spark.hadoop.fs.s3a.secret.key": MINIO_ROOT_PASSWORD,
+        "spark.hadoop.fs.s3a.endpoint": "http://minio:9000",
+        "spark.hadoop.fs.s3a.path.style.access": "true",
+        "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem"
+    },
     dag=dag,
 )
-
-run_spark_script

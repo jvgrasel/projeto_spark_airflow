@@ -7,6 +7,9 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # %%
 
@@ -19,13 +22,13 @@ TMDB_API_TOKEN = os.getenv("TMDB_API_TOKEN")
 if not TMDB_API_TOKEN:
     raise ValueError("ERRO: Token da API do TMDB não encontrado. Verifique seu arquivo .env.")
 
-# Obter credenciais do MinIO do ambiente
-MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
-MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
-MINIO_SERVER = os.getenv("MINIO_SERVER")
+# # Obter credenciais do MinIO do ambiente
+# MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
+# MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
+MINIO_SERVER = "http://minio:9000"
 
-if not MINIO_ROOT_USER or not MINIO_ROOT_PASSWORD or not MINIO_SERVER:
-    raise ValueError("ERRO: Credenciais do MinIO não encontradas. Verifique seu arquivo minio.env.")
+# if not MINIO_ROOT_USER or not MINIO_ROOT_PASSWORD or not MINIO_SERVER:
+#     raise ValueError("ERRO: Credenciais do MinIO não encontradas. Verifique seu arquivo minio.env.")
 
 
 # Configuração do Spark Session com MinIO
@@ -34,14 +37,14 @@ spark = SparkSession.builder \
     .master("spark://spark:7077") \
     .config("spark.executor.memory", "8g")  \
     .config("spark.executor.cores", "1") \
-    .config("spark.hadoop.fs.s3a.endpoint", MINIO_SERVER) \
-    .config("spark.hadoop.fs.s3a.access.key", MINIO_ROOT_USER) \
-    .config("spark.hadoop.fs.s3a.secret.key", MINIO_ROOT_PASSWORD) \
     .config("spark.hadoop.fs.s3a.path.style.access", "true") \
     .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false") \
     .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
     .getOrCreate()
 
+# .config("spark.hadoop.fs.s3a.endpoint", MINIO_SERVER) \
+# .config("spark.hadoop.fs.s3a.access.key", MINIO_ROOT_USER) \
+# .config("spark.hadoop.fs.s3a.secret.key", MINIO_ROOT_PASSWORD) \
 
 # %%
 # URL e headers da API
@@ -50,6 +53,10 @@ headers = {
     "accept": "application/json",
     "Authorization": f"Bearer {TMDB_API_TOKEN}"
 }
+# Testar conexão com a API
+test_response = requests.get("https://api.themoviedb.org/3/configuration", headers=headers)
+if test_response.status_code != 200:
+    raise Exception(f"Falha na conexão com TMDB API: {test_response.text}")
 
 # Lista para armazenar os dados de todas as páginas
 movies_list = []
@@ -58,7 +65,7 @@ movies_list = []
 start_year = 2020
 end_year = 2020
 
-# Loop para cada ano de 2020 a 2026
+# Loop para cada ano de 2020 a 2020
 for year in range(start_year, end_year + 1):
     # Loop para cada mês (de janeiro a dezembro)
     for month in range(1, 13):
@@ -71,6 +78,8 @@ for year in range(start_year, end_year + 1):
         while current_day <= last_day:
             start_date = current_day.strftime("%Y-%m-%d")
             end_date = start_date  # Busca apenas um dia por vez
+            logger.info(f"Coletando dados para {start_date}...")
+
 
             page = 1
 
@@ -110,7 +119,7 @@ for year in range(start_year, end_year + 1):
 
             # Avança para o próximo dia
             current_day += timedelta(days=1)
-
+logger.info(f"Total de filmes coletados: {len(movies_list)}")
 # Definição do schema para o DataFrame do PySpark
 schema = StructType([
     StructField("id", IntegerType(), True),
@@ -121,9 +130,8 @@ schema = StructType([
     StructField("genre_ids", ArrayType(IntegerType()), True)
 ])
 
-# Criando o DataFrame apenas se houver dados
-if movies_list:
-    df = spark.createDataFrame(movies_list, schema=schema)
+# Criando o DataFrame '
+df = spark.createDataFrame(movies_list, schema=schema) if movies_list else spark.createDataFrame([], schema)
 # Escreve no MinIO
 df.write \
   .format("parquet") \

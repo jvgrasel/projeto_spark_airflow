@@ -35,7 +35,6 @@ O projeto segue a arquitetura de Data Lakehouse, organizando os dados em três c
 │   ├── logs/
 │   │   ├── dag_processor_manager/
 │   │   ├── scheduler/
-├── config/
 ├── data_lake/
 │   ├── bronze/
 │   │   ├── movie_00_10/
@@ -44,7 +43,6 @@ O projeto segue a arquitetura de Data Lakehouse, organizando os dados em três c
 │   │   ├── movie_90_00/
 │   ├── silver/
 │   ├── gold/
-├── docker/
 ├── env/
 ├── metabase/
 │   ├── config/
@@ -82,11 +80,37 @@ docker-compose up -d
 
 Acesse os serviços:
 
-- Airflow: http://localhost:8080 (user: airflow, senha: airflow)
+- Airflow: http://localhost:8080 (user: admin, senha: admin)
 - MinIO: http://localhost:9001 (user: minioadmin, senha: minioadmin)
 - Metabase: http://localhost:3000
 - Jupyter http://localhost:8888
 
+
+# Configuração MinIO e Airflow
+
+### 1️⃣ Acesse o webserver do MinIO e crie sua **Access Key**  
+
+![MinIO Webserver](https://prnt.sc/1M4AMeExxxfN)
+
+---
+
+### 2️⃣ Acesse o webserver do Airflow  
+- Vá até o menu **Variables** e adicione sua **Access Key** e **Password**:
+
+| **Key**                | **Value**         |
+|------------------------|-------------------|
+| `MINIO_ROOT_USER`      | *Sua Access Key*      |
+| `MINIO_ROOT_PASSWORD`  | *Sua Access Password* |
+
+> ⚠️ **Atenção:** Altere o campo Value para os seus dados
+
+---
+
+### 3️⃣ Configuração do Spark no Airflow  
+- Acesse o menu **Connections** e edite a conexão `spark_default`.  
+- Altere o **Host** de `YARN` para:  local[*]
+
+![Airflow Connections](https://prnt.sc/ksDBKW21N66Z)
 
 ---
 
