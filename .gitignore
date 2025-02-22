@@ -1,3 +1,8 @@
-./airflow/logs*
-./spark/scripts/.ipynb_checkpoints*
-./spark/scripts/.Trash-0
+# Ignorar todos os logs do Airflow
+airflow/logs/
+
+# Ignorar checkpoints do Jupyter
+spark/scripts/.ipynb_checkpoints/
+
+# Ignorar pasta de lixo
+spark/scripts/.Trash-0/
