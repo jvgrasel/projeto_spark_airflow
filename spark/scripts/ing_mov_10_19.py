@@ -26,7 +26,7 @@ MINIO_SERVER = "http://minio:9000"
 
 # Configuração do Spark Session com MinIO
 spark = SparkSession.builder \
-    .appName("Movies_70_79") \
+    .appName("Movies_10_19") \
     .master("spark://spark:7077") \
     .config("spark.executor.memory", "8g")  \
     .config("spark.executor.cores", "1") \
@@ -51,10 +51,10 @@ if test_response.status_code != 200:
 # Lista para armazenar os dados de todas as páginas
 movies_list = []
 
-# Define o intervalo de anos de 1970 a 1979
-start_year = 1970
-end_year = 1979
-# Loop para cada ano de 1970 a 1979
+# Define o intervalo de anos de 2010 a 2019
+start_year = 2010
+end_year = 2019
+# Loop para cada ano de 2010 a 2019
 for year in range(start_year, end_year + 1):
     # Loop para cada mês (de janeiro a dezembro)
     for month in range(1, 13):
@@ -125,7 +125,7 @@ df = spark.createDataFrame(movies_list, schema=schema) if movies_list else spark
 df.write \
   .format("parquet") \
   .mode("overwrite") \
-  .save("s3a://bronze/movie_70_79/")
+  .save("s3a://bronze/movie_10_19/")
 
 spark.stop()
 

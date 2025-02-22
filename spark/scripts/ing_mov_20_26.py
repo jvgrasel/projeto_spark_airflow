@@ -22,11 +22,18 @@ TMDB_API_TOKEN = os.getenv("TMDB_API_TOKEN")
 if not TMDB_API_TOKEN:
     raise ValueError("ERRO: Token da API do TMDB não encontrado. Verifique seu arquivo .env.")
 
+# # Obter credenciais do MinIO do ambiente
+# MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
+# MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
 MINIO_SERVER = "http://minio:9000"
+
+# if not MINIO_ROOT_USER or not MINIO_ROOT_PASSWORD or not MINIO_SERVER:
+#     raise ValueError("ERRO: Credenciais do MinIO não encontradas. Verifique seu arquivo minio.env.")
+
 
 # Configuração do Spark Session com MinIO
 spark = SparkSession.builder \
-    .appName("Movies_70_79") \
+    .appName("Movies_20_26") \
     .master("spark://spark:7077") \
     .config("spark.executor.memory", "8g")  \
     .config("spark.executor.cores", "1") \
@@ -35,6 +42,9 @@ spark = SparkSession.builder \
     .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
     .getOrCreate()
 
+# .config("spark.hadoop.fs.s3a.endpoint", MINIO_SERVER) \
+# .config("spark.hadoop.fs.s3a.access.key", MINIO_ROOT_USER) \
+# .config("spark.hadoop.fs.s3a.secret.key", MINIO_ROOT_PASSWORD) \
 
 # %%
 # URL e headers da API
@@ -51,10 +61,11 @@ if test_response.status_code != 200:
 # Lista para armazenar os dados de todas as páginas
 movies_list = []
 
-# Define o intervalo de anos de 1970 a 1979
-start_year = 1970
-end_year = 1979
-# Loop para cada ano de 1970 a 1979
+# Define o intervalo de anos de 2020 a 2026
+start_year = 2020
+end_year = 2026
+
+# Loop para cada ano de 2020 a 2026
 for year in range(start_year, end_year + 1):
     # Loop para cada mês (de janeiro a dezembro)
     for month in range(1, 13):
@@ -125,7 +136,7 @@ df = spark.createDataFrame(movies_list, schema=schema) if movies_list else spark
 df.write \
   .format("parquet") \
   .mode("overwrite") \
-  .save("s3a://bronze/movie_70_79/")
+  .save("s3a://bronze/movie_20_26/")
 
 spark.stop()
 
