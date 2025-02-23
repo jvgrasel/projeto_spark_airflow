@@ -58,7 +58,7 @@ for script in scripts:
         application=f"/opt/bitnami/spark/scripts/{script}",
         conn_id="spark_default",
         verbose=True,
-        driver_memory="4g",
+        driver_memory="2g",
         packages="org.apache.hadoop:hadoop-aws:3.3.4,com.amazonaws:aws-java-sdk-bundle:1.12.262",
         conf={
             "spark.hadoop.fs.s3a.access.key": MINIO_ROOT_USER,

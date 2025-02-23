@@ -28,7 +28,7 @@ MINIO_SERVER = "http://minio:9000"
 spark = SparkSession.builder \
     .appName("Movies_80_89") \
     .master("spark://spark:7077") \
-    .config("spark.executor.memory", "8g")  \
+    .config("spark.executor.memory", "6g")  \
     .config("spark.executor.cores", "1") \
     .config("spark.hadoop.fs.s3a.path.style.access", "true") \
     .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false") \
