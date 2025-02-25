@@ -6,3 +6,7 @@ spark/scripts/.ipynb_checkpoints/
 
 # Ignorar pasta de lixo
 spark/scripts/.Trash-0/
+
+echo "spark/spark-ivy-cache/" >> .gitignore
+
+spark/spark-ivy-cache/
