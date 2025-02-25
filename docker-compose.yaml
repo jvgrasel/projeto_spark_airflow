@@ -18,6 +18,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-./}airflow/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-./}airflow/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-./}spark/scripts:/opt/bitnami/spark/scripts
+    - ivy-cache:/home/airflow/.ivy2
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on

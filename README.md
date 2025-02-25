@@ -37,10 +37,6 @@ O projeto segue a arquitetura de Data Lakehouse, organizando os dados em três c
 │   │   ├── scheduler/
 ├── data_lake/
 │   ├── bronze/
-│   │   ├── movie_00_10/
-│   │   ├── movie_70_80/
-│   │   ├── movie_80_90/
-│   │   ├── movie_90_00/
 │   ├── silver/
 │   ├── gold/
 ├── env/
@@ -95,12 +91,17 @@ Acesse os serviços:
 ---
 
 ### 2️⃣ Acesse o webserver do Airflow  
-- Vá até o menu **Variables** e adicione sua **Access Key** e **Password**:
+- Vá até o menu **Variables** e adicione sua **Access Key** e **Password**, e configure o alerta de e-mail:
 
 | **Key**                | **Value**         |
 |------------------------|-------------------|
 | `MINIO_ROOT_USER`      | *Sua Access Key*      |
 | `MINIO_ROOT_PASSWORD`  | *Sua Access Password* |
+| `AIRFLOW__SMTP__SMTP_HOST`      | *smtp.gmail.com*      |
+| `AIRFLOW__SMTP__SMTP_PORT`  | *587* |
+| `AIRFLOW__SMTP__SMTP_USER`      | *seu_email@gmail.com*      |
+| `AIRFLOW__SMTP__SMTP_PASSWORD`  | *sua_senha* |    |
+| `AIRFLOW__SMTP__SMTP_MAIL_FROM`  | airflow@dominio.com* |
 
 > ⚠️ **Atenção:** Altere o campo Value para os seus dados
 
