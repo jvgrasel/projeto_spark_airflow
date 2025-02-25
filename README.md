@@ -97,13 +97,19 @@ Acesse os serviços:
 |------------------------|-------------------|
 | `MINIO_ROOT_USER`      | *Sua Access Key*      |
 | `MINIO_ROOT_PASSWORD`  | *Sua Access Password* |
-| `AIRFLOW__SMTP__SMTP_HOST`      | *smtp.gmail.com*      |
-| `AIRFLOW__SMTP__SMTP_PORT`  | *587* |
-| `AIRFLOW__SMTP__SMTP_USER`      | *seu_email@gmail.com*      |
-| `AIRFLOW__SMTP__SMTP_PASSWORD`  | *sua_senha* |    |
-| `AIRFLOW__SMTP__SMTP_MAIL_FROM`  | airflow@dominio.com* |
+
 
 > ⚠️ **Atenção:** Altere o campo Value para os seus dados
+
+### 3️⃣ Configuração de alerta de falha por e-mail  
+
+Abra o arquivo `smtp.env` no diretório `env` e altere os seguintes campos:  
+
+| **Campo**                        | **Valor**                      |
+|--------------------------------|--------------------------------|
+| `AIRFLOW__SMTP__SMTP_USER=`     | *Seu e-mail*                   |
+| `AIRFLOW__SMTP__SMTP_PASSWORD=` | *Sua senha app do e-mail*      |
+| `AIRFLOW__SMTP__SMTP_MAIL_FROM=`| *Seu e-mail*                   |
 
 ---
 

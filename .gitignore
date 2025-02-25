@@ -11,3 +11,4 @@ echo "spark/spark-ivy-cache/" >> .gitignore
 
 spark/spark-ivy-cache/
 *.jar
+.venv/

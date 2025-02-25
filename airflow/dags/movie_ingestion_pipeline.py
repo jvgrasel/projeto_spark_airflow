@@ -1,28 +1,17 @@
 from airflow import DAG
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
 from airflow.models import Variable
-from airflow.utils.email import send_email
 from datetime import datetime
 
-# Função de notificação de erro
-def alerta_erro(context):
-    send_email(
-        to="joathan94@yahoo.com",
-        subject=f"⚠️ Falha na Tarefa: {context['task_instance'].task_id}",
-        html_content=f"""
-            <h3>Erro na Execução da Tarefa</h3>
-            <p><b>DAG:</b> {context['dag'].dag_id}</p>
-            <p><b>Tarefa:</b> {context['task_instance'].task_id}</p>
-            <p><b>Horário:</b> {context['execution_date']}</p>
-        """
-    )
 
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
     "start_date": datetime(2024, 2, 12),
     "retries": 1,
-    "on_failure_callback": alerta_erro
+    "email": ["fattetv@gmail.com"],  # Lista de destinatários
+    "email_on_failure": True,  # Notificar em caso de falha
+    "email_on_retry": False,  # Não notificar em tentativas
 }
 
 dag = DAG(

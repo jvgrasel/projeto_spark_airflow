@@ -8,10 +8,11 @@ default_args = {
     "depends_on_past": False,
     "start_date": datetime(2024, 2, 12),
     "retries": 1,
-    "email": "joathan94@yahoo.com",  # Altere para seu e-mail
-    "email_on_failure": True,  # Habilita notificação por e-mail
+    "retry_delay": timedelta(minutes=5),  # Tempo entre as tentativas
+    "email": ["fattetv@gmail.com"],  # Lista de destinatários
+    "email_on_failure": True,  # Notificar em caso de falha
+    "email_on_retry": False,  # Não notificar em tentativas
 }
-
 dag = DAG(
     "colect_mov_changes",
     default_args=default_args,
