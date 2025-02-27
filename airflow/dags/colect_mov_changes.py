@@ -27,7 +27,7 @@ MINIO_ROOT_PASSWORD = Variable.get("MINIO_ROOT_PASSWORD")
 
 spark_task = SparkSubmitOperator(
     task_id="processar_dados_movimentacoes",
-    application="/opt/bitnami/spark/scripts/colect_mov_changes.py",  # Caminho do novo script
+    application="/opt/bitnami/spark/scripts/movies/colect_mov_changes.py",  # Caminho do novo script
     conn_id="spark_default",
     verbose=True,
     driver_memory="4g",

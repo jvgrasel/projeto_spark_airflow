@@ -1,6 +1,6 @@
-# 📊 Data Engineering Project - [Nome do Projeto]
+# 📊 Data Engineering Project - MovieDataFlow
 
-Este projeto foi desenvolvido para processar e analisar dados do The Movie Database(TMDB). Utiliza Apache Spark, Airflow e PostgreSQL para transformar dados brutos em insights acionáveis.
+Este projeto foi desenvolvido para processar e analisar dados do The Movie Database(TMDB). Utiliza Docker, Apache Spark, Jupyter, Apache Airflow, PostgreSQL e Metabase para transformar dados brutos em insights acionáveis.
 
 📌 **Principais funcionalidades**:
 - Coleta de dados via API.
@@ -18,6 +18,7 @@ O projeto segue a arquitetura de Data Lakehouse, organizando os dados em três c
 
 🚀 **Tecnologias Utilizadas**:
 - **Docker**: Gerenciamento dos serviços do projeto.
+- **Jupyter**: Desenvolvimento das pipelines
 - **Apache Airflow**: Orquestração dos pipelines de dados.
 - **Apache Spark**: Processamento e transformação dos dados.
 - **PostgreSQL**: Banco de dados para armazenamento e consultas analíticas.
@@ -47,6 +48,9 @@ O projeto segue a arquitetura de Data Lakehouse, organizando os dados em três c
 ├── spark/
 │   ├── jobs/
 │   ├── scripts/
+│   ├──├── movies/
+│   ├──├── tvshow/
+│   ├── spark-ivy-cache
 ├── tests/
 │   ├── integration/
 │   ├── unit/
@@ -66,7 +70,7 @@ Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
 
 Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/jvgrasel/projeto_spark_airflow.git
 cd seu-repositorio
 
 Ajuste o arquivo "api.env" com o seu token de autenticação e sua chave de acesso. 
@@ -91,7 +95,7 @@ Acesse os serviços:
 ---
 
 ### 2️⃣ Acesse o webserver do Airflow  
-- Vá até o menu **Variables** e adicione sua **Access Key** e **Password**, e configure o alerta de e-mail:
+- Vá até o menu **Variables** e adicione sua **Access Key** e **Password**:
 
 | **Key**                | **Value**         |
 |------------------------|-------------------|
@@ -133,8 +137,9 @@ Descreva os principais fluxos de dados no projeto.
 4️⃣ **Orquestração**: O Airflow gerencia a execução automática dos pipelines.  
 
 🛠 **Principais DAGs do Airflow**:
-- `ingestao_dados.py`: Coleta os dados brutos da API.
-- `processamento_spark.py`: Transforma os dados na camada Silver.
+- `movie_ingestion_pipeline.py`: Coleta os dados brutos dos filmes de 1970 a 2026 da API e salva na camada Bronze.
+- `tvshow_ingestion_pipeline.py`: Coleta os dados brutos dos programas de TV de 1970 a 2026 da API e salva na camada Bronze.
+- `colect_mov_changes.py`: Coleta as atualizações realizadas nos filmes nos ultimos 9 dias via API e salva na camada Bronze.
 - `carga_postgres.py`: Carrega os dados finais no PostgreSQL.
 ```
 

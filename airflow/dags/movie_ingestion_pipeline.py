@@ -44,7 +44,7 @@ for script in scripts:
     
     task = SparkSubmitOperator(
         task_id=task_id,
-        application=f"/opt/bitnami/spark/scripts/{script}",
+        application=f"/opt/bitnami/spark/scripts/movies/{script}",
         conn_id="spark_default",
         verbose=True,
         driver_memory="2g",
