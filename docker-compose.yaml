@@ -180,15 +180,14 @@ services:
     image: docker.io/bitnami/spark:3.5.4
     env_file:
       - ./env/api.env
+      - ./env/minio.env
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
-      - SPARK_USER=spark
-      - AWS_ACCESS_KEY_ID=minioadmin      
-      - AWS_SECRET_ACCESS_KEY=minioadmin  
+      - SPARK_USER=spark 
       - AWS_REGION=us-east-1
       - S3_ENDPOINT=http://minio:9000
     ports:
@@ -202,7 +201,7 @@ services:
       dockerfile: dockerfile.sparkworker
     env_file:
       - ./env/api.env
-      # - ./env/minio.env
+      - ./env/minio.env
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
@@ -226,13 +225,13 @@ services:
       dockerfile: dockerfile.sparkworker
     env_file:
       - ./env/api.env
-      # - ./env/minio.env
+      - ./env/minio.env
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
       - SPARK_WORKER_MEMORY=6G
       - SPARK_WORKER_CORES=1
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_AUTHENTICATION_ENABL  ED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
