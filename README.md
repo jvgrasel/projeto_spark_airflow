@@ -1,4 +1,5 @@
 # 📊 Data Engineering Project - MovieDataFlow
+## IN PROGRESS
 
 Este projeto foi desenvolvido para processar e analisar dados do The Movie Database(TMDB). Utiliza Docker, Apache Spark, Jupyter, Apache Airflow, PostgreSQL e Metabase para transformar dados brutos em insights acionáveis.
 
