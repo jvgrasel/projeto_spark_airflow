@@ -49,9 +49,9 @@ schema = StructType([
 ])
 
 # %%
-def get_last_10_days():
+def get_last_03_days():
     today = datetime.now()
-    return [today - timedelta(days=i) for i in range(10, 0, -1)]
+    return [today - timedelta(days=i) for i in range(3, 0, -1)]
 
 def fetch_changed_ids(target_date):
     changed_ids = set()  # Alterado para set para evitar duplicatas
@@ -82,7 +82,7 @@ def fetch_changed_ids(target_date):
             total_pages = min(total_pages, 500)
             
             page += 1
-            time.sleep(0.25)
+            time.sleep(0.01)
             
         except Exception as e:
             logger.error(f"Erro na página {page}: {str(e)}")
@@ -90,11 +90,14 @@ def fetch_changed_ids(target_date):
 
     logger.info(f"IDs únicos coletados para {date_str}: {len(changed_ids)}")
     return changed_ids
-def fetch_movie_details(movie_id):
+def fetch_movie_details(movie_id, api_token):
+    headers = {
+        "accept": "application/json",
+        "Authorization": f"Bearer {api_token}"
+    }
     try:
         url = f"https://api.themoviedb.org/3/movie/{movie_id}?language=en-US"
         response = requests.get(url, headers=headers)
-        
         if response.status_code == 200:
             data = response.json()
             return {
@@ -108,40 +111,40 @@ def fetch_movie_details(movie_id):
         else:
             logger.error(f"Erro {response.status_code} no filme {movie_id}")
             return None
-            
     except Exception as e:
         logger.error(f"Erro no filme {movie_id}: {str(e)}")
         return None
-
-# %%
 def main():
-    all_ids = set()  # Set global para armazenar todos os IDs únicos
-    all_movies = []
+    all_ids = set()
+    # Coleta de IDs (mantido igual)
+    for day in get_last_03_days():
+        all_ids.update(fetch_changed_ids(day))
     
-    # Fase 1: Coleta de todos os IDs únicos
-    for day in get_last_10_days():
-        daily_ids = fetch_changed_ids(day)
-        all_ids.update(daily_ids)
-        logger.info(f"Total acumulado após {day.strftime('%Y-%m-%d')}: {len(all_ids)}")
+    logger.info(f"Total de IDs únicos: {len(all_ids)}")
     
-    logger.info(f"Total final de IDs únicos: {len(all_ids)}")
+    # Processamento paralelo com Spark
+    sc = spark.sparkContext
+    broadcast_token = sc.broadcast(TMDB_API_TOKEN)
     
-    # Fase 2: Processamento dos detalhes
-    for idx, movie_id in enumerate(all_ids, 1):
-        if movie_data := fetch_movie_details(movie_id):
-            all_movies.append(movie_data)
-            if idx % 100 == 0:  # Log a cada 100 processamentos
-                logger.info(f"Processados {idx}/{len(all_ids)} IDs")
-        time.sleep(0.01)
+    # Configuração de paralelismo e rate limit
+    num_partitions = 50  # Ajuste conforme necessidade
+    delay_per_request = 0.01  # 110ms entre requisições
+    
+    def process_movie_id(movie_id):
+        time.sleep(delay_per_request)
+        return fetch_movie_details(movie_id, broadcast_token.value)
+    
+    # Paraleliza o processamento
+    movies_rdd = sc.parallelize(list(all_ids), numSlices=num_partitions)
+    movies_rdd = movies_rdd.map(process_movie_id).filter(lambda x: x is not None)
+    
+    # Coleta resultados
+    all_movies = movies_rdd.collect()
     
     if all_movies:
         df = spark.createDataFrame(all_movies, schema=schema)
-        df.show(5)
-        df.write \
-            .format("parquet") \
-            .mode("overwrite") \
-            .save("s3a://bronze/movies_changes/")
-        logger.info(f"Dados salvos. Total de registros: {len(all_movies)}")
+        df.write.format("parquet").mode("overwrite").save("s3a://bronze/movies_changes/")
+        logger.info(f"Dados salvos. Total: {len(all_movies)}")
     else:
         logger.warning("Nenhum dado para salvar")
 
